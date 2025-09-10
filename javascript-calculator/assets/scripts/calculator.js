@@ -31,7 +31,7 @@ function calculate() {
 
     // Operand 2 is Required
     if (operand2 == "") {
-        document.getElementById("Operand2Error").innerHTML = "Operator is Required";
+        document.getElementById("Operand2Error").innerHTML = "Operand 2 is Required";
         errorflag = true;
     }
 
@@ -113,7 +113,7 @@ function calculate() {
             }
         }
 
-        // if operator was "Avg" then calcualute the average of 3 operands
+        // if operator was "Avg" the calcualute the average of 3 operands
         if (operator == "Avg") {
             result = (operand1fp + operand2fp + operand3fp) / 3.0;
         }
