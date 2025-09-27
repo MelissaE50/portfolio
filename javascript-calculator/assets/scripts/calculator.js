@@ -41,20 +41,6 @@ function calculate() {
         errorflag = true;
     }
 
-    // Get Operand 3 from form
-    let operand3 = document.getElementById("Operand3").value;
-
-    // Operand 3 is Required
-    if (operand3 == "") {
-        document.getElementById("Operand3Error").innerHTML = "Operand 3 is Required";
-        errorflag = true;
-    }
-
-    // Operand 3 must be a floating point number
-    if (isNaN(operand3)) {
-        document.getElementById("Operand3Error").innerHTML = "Operand 3 Must be a Floating Point Number";
-        errorflag = true;
-    }
 
     // At least one operator has to be checked
     if (!document.getElementById("MinOperator").checked && 
@@ -70,7 +56,6 @@ function calculate() {
         // convert the operands from string to floating point
         let operand1fp = parseFloat (operand1);
         let operand2fp = parseFloat (operand2);
-        let operand3fp = parseFloat (operand3);
         
         // figure out which operator was checked and place the value in operator
         let operator;

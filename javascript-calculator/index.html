@@ -14,21 +14,13 @@
             <legend>Calculator</legend>  
             <br>
             
+            <!-- Operand 1 -->
             <label class="formlabel" for="Operand1">Operand 1: </label>
             <input type="text" id="Operand1" name="Operand1" size="15" maxlength="15">
             <label class="error" for="Operand1" id="Operand1Error"></label>
             <br><br>
-      
-            <label class="formlabel" for="Operand2">Operand 2: </label>
-            <input type="text" id="Operand2" name="Operand2" size="15" maxlength="15">
-            <label class="error" for="Operand2" id="Operand2Error"></label>
-            <br><br>
 
-            <label class="formlabel" for="Operand3">Operand 3: </label>
-            <input type="text" id="Operand3" name="Operand3" size="15" maxlength="15">
-            <label class="error" for="Operand3" id="Operand3Error"></label>
-            <br><br>
-
+            <!-- Operator -->
             <label class="formlabel">Operator: </label>
                 <label for="MinOperator">
                     <input type="radio" name="Operator" id="MinOperator" value="Min">Min
@@ -41,6 +33,14 @@
                 </label>
             <label for="Operator" class="error" id="OperatorError"></label>
             <br><br>
+      
+            <!-- Operand 2 -->
+            <label class="formlabel" for="Operand2">Operand 2: </label>
+            <input type="text" id="Operand2" name="Operand2" size="15" maxlength="15">
+            <label class="error" for="Operand2" id="Operand2Error"></label>
+            <br><br>
+
+            <!-- Result -->        
 
             <label class="formlabel">Result: </label>
             <span id="Result"></span>
