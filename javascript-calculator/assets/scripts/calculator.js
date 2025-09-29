@@ -43,9 +43,10 @@ function calculate() {
 
 
     // At least one operator has to be checked
-    if (!document.getElementById("MinOperator").checked && 
-        !document.getElementById("MaxOperator").checked && 
-        !document.getElementById("AvgOperator").checked) {
+    if (!document.getElementById("AddOperator").checked && 
+        !document.getElementById("SubtractOperator").checked && 
+         !document.getElementById("MultiplyOperator").checked && 
+        !document.getElementById("DivideOperator").checked) {
             document.getElementById("OperatorError").innerHTML = "Operator is Required";
             errorflag = true;                
     }
@@ -59,14 +60,17 @@ function calculate() {
         
         // figure out which operator was checked and place the value in operator
         let operator;
-        if (document.getElementById("MinOperator").checked) {
-            operator = document.getElementById("MinOperator").value;
+        if (document.getElementById("AddOperator").checked) {
+            operator = document.getElementById("AddOperator").value;
         }
-        if (document.getElementById("MaxOperator").checked) {
-            operator = document.getElementById("MaxOperator").value;
+        if (document.getElementById("SubtractOperator").checked) {
+            operator = document.getElementById("SubtractOperator").value;
         }
-        if (document.getElementById("AvgOperator").checked) {
-            operator = document.getElementById("AvgOperator").value;
+         if (document.getElementById("MultiplyOperator").checked) {
+            operator = document.getElementById("MultiplyOperator").value;
+        }
+        if (document.getElementById("DivideOperator").checked) {
+            operator = document.getElementById("DivideOperator").value;
         }
 
         // Calculate the answer and put it in result
