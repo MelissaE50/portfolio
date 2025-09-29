@@ -76,36 +76,25 @@ function calculate() {
         // Calculate the answer and put it in result
         let result;
         
-        // if the operator was "Min" then set result to the minimum */
-        if (operator == "Min") {
-            if(operand1fp <= operand2fp && operand1fp <= operand3fp) {
-                result = operand1fp;
+        // if the operator was "Add" */
+        if (operator == "+") {
+            result = operand1fp + operand2fp;
             }
-            if(operand2fp <= operand1fp && operand2fp <= operand3fp) {
-                result = operand2fp;
-            }
-            if(operand3fp <= operand1fp && operand3fp <= operand2fp) {
-                result = operand3fp;
-            }
-        }
  
-        // if the operator was "Max" then set result to the maximum
-        if (operator == "Max") {
-            if(operand1fp >= operand2fp && operand1fp >= operand3fp) {
-                result = operand1fp;
+        // if the operator was "Subtract" */
+         if (operator == "-") {
+            result = operand1fp - operand2fp;
             }
-            if(operand2fp >= operand1fp && operand2fp >= operand3fp) {
-                result = operand2fp;
-            }
-            if(operand3fp >= operand1fp && operand3fp >= operand2fp) {
-                result = operand3fp;
-            }
-        }
 
-        // if operator was "Avg" the calcualute the average of 3 operands
-        if (operator == "Avg") {
-            result = (operand1fp + operand2fp + operand3fp) / 3.0;
-        }
+     // if the operator was "Multiply" */
+         if (operator == "*") {
+            result = operand1fp * operand2fp;
+            }
+
+        // if the operator was "Divide" */
+         if (operator == "/") {
+            result = operand1fp / operand2fp;
+            }
         
         /* convert the result to a string and display it */
         document.getElementById("Result").innerHTML = result.toString();
@@ -121,9 +110,10 @@ function clearform() {
     document.getElementById("Operand1Error").innerHTML = "";
     document.getElementById("Operand2Error").innerHTML = "";
     document.getElementById("Operand3Error").innerHTML = "";
-    document.getElementById("MinOperator").checked = false;
-    document.getElementById("MaxOperator").checked = false;
-    document.getElementById("AvgOperator").checked = false;
+    document.getElementById("AddOperator").checked = false;
+    document.getElementById("SubtractOperator").checked = false;
+    document.getElementById("MultiplyOperator").checked = false;
+    document.getElementById("DivideOperator").checked = false;
     document.getElementById("OperatorError").innerHTML = "";
     document.getElementById("Result").innerHTML = "";
 }
