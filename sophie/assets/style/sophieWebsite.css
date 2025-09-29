@@ -1,0 +1,185 @@
+html {
+    box-sizing: border-box;
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+
+body{
+  text-align: center;
+  background-image: url("assets");
+  font-family: "Playfair Display", serif;
+  font-size: 16px;
+  line-height: 1.5em;
+}
+
+img {
+  max-inline-size: 100%;
+  block-size: auto;
+}
+footer, header{
+  background: lavenderblush;
+}
+
+/*style containers*/
+#container {
+	max-width: 800px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	background-color: lavenderblush;
+	margin-top: 10px;
+	border: 2px solid dark slategray;
+  margin-bottom:2rem;
+}
+
+/*style content*/
+#content {
+	max-width: 800px;
+	margin-right: auto;
+	margin-left: auto;
+  font-size: large;
+	text-align: center;
+	background:lavenderblush;
+	margin-top: 10px;
+	border: 2px solid darkslategray;
+  margin-bottom:2rem;
+}
+
+/*style cards*/
+.card{
+    margin-bottom: 2rem;
+  }
+
+.card-body {
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	background-color: lavenderblush;
+}
+
+/*style header*/
+#header h1 { 
+  text-align: center;
+  color: lavenderblush;
+  text-shadow: 2px 2px #000000;
+  padding: 6em 2em;
+  width: 800px;
+  height: 240px;
+  margin: 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/*center and style carousel*/
+#carouselExample {
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+.carousel-inner {
+  max-width: 600px;
+	background-color: lavenderblush;
+	margin-top: 10px;
+	border: 2px solid dark slategray;
+  margin-bottom:2rem;
+}
+
+  /* Media Queries for breakpoints*/
+
+  /* Media Query for mobile*/
+  @media screen and (max-width: 599px){
+    body{
+      font-size: 14px;
+      background-size: cover;
+      padding: 0 1em;
+    }
+
+    #header h1 { 
+      font-size: 1.5rem;
+      padding: 2em 1em;
+      width: 100%;
+      height: Auto;
+    }
+
+    #container {
+	    width: 100%;
+      max-width: 100%;
+      border-width: 1px;
+    }
+
+    #content {
+	    max-width: 100%;
+      border-width: 1px;
+    }
+
+    .carousel-inner {
+	    max-width: 100%;
+      border-width: 1px;
+    } 
+  }
+
+  /* Media Query for tablet*/
+   @media screen and (min-width: 600px){
+    body{
+      font-size: 15px;
+      background-size: cover;
+      padding: 0 2em;
+    }
+
+    #header h1 { 
+      font-size: 2rem;
+      padding: 4em 1em;
+      width: 100%;
+      height: Auto;
+    }
+
+    #container {
+	    width: 95%;
+      max-width: 95%;
+    }
+
+    #content {
+	    width: 95%;
+      max-width: 95%;
+    }
+
+    .carousel-inner {
+	    width: 95%;
+      max-width: 95%;
+    }
+  }
+
+  /* Media Query for desktop*/
+  @media screen and (max-width: 1024px){
+    body{
+      font-size: 16px;
+    }
+
+    #header h1 { 
+      font-size: 2.5rem;
+      padding: 4em 1em;
+      width: 100%;
+      height: Auto;
+    }
+
+    #container {
+	    max-width: 100%;
+      border-width: 1px;
+    }
+
+    #content {
+	    max-width: 100%;
+      border-width: 1px;
+    }
+
+    .carousel-inner {
+	    max-width: 100%;
+    }
+  }
+
+
+  
+  
