@@ -4,7 +4,6 @@ function calculate() {
     // Clear any error or output messages
     document.getElementById("Operand1Error").innerHTML = "";
     document.getElementById("Operand2Error").innerHTML = "";
-    document.getElementById("Operand3Error").innerHTML = "";
     document.getElementById("OperatorError").innerHTML = "";
     document.getElementById("Result").innerHTML = "";
 
@@ -106,10 +105,8 @@ function clearform() {
     /* Set all of the form values to blank or false */
     document.getElementById("Operand1").value = "";
     document.getElementById("Operand2").value = "";
-    document.getElementById("Operand3").value = "";
     document.getElementById("Operand1Error").innerHTML = "";
     document.getElementById("Operand2Error").innerHTML = "";
-    document.getElementById("Operand3Error").innerHTML = "";
     document.getElementById("AddOperator").checked = false;
     document.getElementById("SubtractOperator").checked = false;
     document.getElementById("MultiplyOperator").checked = false;
