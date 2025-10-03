@@ -17,21 +17,23 @@ body {
 	margin-right: auto;
 	margin-left: auto;
 	text-align: left;
+	background-image:url("../images/webpage-background.jpg");
 	background-color: #FFF;
 	margin-top: 20px;
 	border: 1px solid #CCC;
+	color: #FFF;
 }
 
 #header h1 a {
     color: #ffffff; 
-  width: 800px;
-  height: 140px;
-  display: block;
-  background-image: url("../images/webpage-header.jpg");
-  margin: 0 auto;
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden;
+  	width: 800px;
+  	height: 140px;
+  	display: block;
+  	background-image: url("../images/webpage-header.jpg");
+  	margin: 0 auto;
+  	text-indent: 100%;
+  	white-space: nowrap;
+  	overflow: hidden;
   
 }
 
