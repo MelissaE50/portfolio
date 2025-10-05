@@ -7,19 +7,54 @@
     <link rel="stylesheet" type="text/css" href="assets/css/stylesheet.css">
 </head>
 <body>
-<form id="myform">
-    <div class="formcontainer" onsubmit="return false">
-        <h1>Currency Value History</h1>
-        <fieldset id="detail">
-            <legend>Currency Value History</legend>  
+ <form id="myform" onsubmit="return false;">
+        <div class="formcontainer">
+            <h2>Currency Value History</h2>
+            <label for="BaseCurrency" class="formlabel" >Base Currency: </label>
+            <input type="text" id="BaseCurrency" name="BaseCurrency" size="6" maxlength="6">
+            <label class="error" for="BaseCurrency" id="BaseCurrencyError"></label><br>
+            <label for="ConvertCurrency" class="formlabel" >Convert to Currency: </label>
+            <input type="text" id="ConvertCurrency" name="ConvertCurrency" size="6" maxlength="6">
+            <label class="error" for="ConvertCurrency" id="ConvertCurrencyError"></label><br>
+            <label class="formlabel">From Date:</label>
+            <input type="date" name="FromDate" id="FromDate">
+            <label id="FromDateError" for="FromDate" class="error"></label>
+            <label class="formlabel">To Date:</label>
+            <input type="date" name="ToDate" id="ToDate">
+		    <label id="ToDateError" for="ToDate" class="error"></label>
+            <br><br>
+            <input type="button" value="ShowResults" id="ShowResults" name="ShowResults" onclick="GetResults();">
+            <input type="button" value="Clear" id="Clear" name="Clear" onclick="ClearForm();">
+            <hr>
+            <br>
+           <br>
+            <hr>
 
+            <div class="clearfix">
+                <div class="img-container">
+                    <span id="StockValueTable"></span>
+                </div>
+                <div class="img-container">
+                    <span id="StockVolumeTable"></span>
+                </div>
             </div>
-</form>
-<script src="assets/scripts/currencyValueHistory.js"></script>
-
-<div id="hl-aria-live-message-container" aria-live="polite" class="visually-hidden"></div><div id="hl-aria-live-alert-container" role="alert" aria-live="assertive" class="visually-hidden">
-
-</div>
+            <hr>
+            
+            <div class="clearfix">
+                <div class="img-container">
+                    <canvas id="chartjs-0" width="400" height="400"></canvas>
+                </div>
+                <div class="img-container">
+                    <canvas id="chartjs-1" width="400" height="400"></canvas>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script src="scripts/script.js"></script>
 </body>
 </html>
 
