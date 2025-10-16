@@ -10,45 +10,68 @@
  <form id="myform" onsubmit="return false;">
         <div class="formcontainer">
             <h2>Currency Value History</h2>
-            <label for="BaseCurrency" class="formlabel" >Base Currency: </label>
-            <input type="text" id="BaseCurrency" name="BaseCurrency" size="6" maxlength="6">
-            <label class="error" for="BaseCurrency" id="BaseCurrencyError"></label><br>
-            <label for="ConvertCurrency" class="formlabel" >Convert to Currency: </label>
-            <input type="text" id="ConvertCurrency" name="ConvertCurrency" size="6" maxlength="6">
-            <label class="error" for="ConvertCurrency" id="ConvertCurrencyError"></label><br>
-            <label class="formlabel">From Date:</label>
-            <input type="date" name="FromDate" id="FromDate">
-            <label id="FromDateError" for="FromDate" class="error"></label>
-            <label class="formlabel">To Date:</label>
-            <input type="date" name="ToDate" id="ToDate">
-		    <label id="ToDateError" for="ToDate" class="error"></label>
-            <br><br>
-            <input type="button" value="ShowResults" id="ShowResults" name="ShowResults" onclick="GetResults();">
-            <input type="button" value="Clear" id="Clear" name="Clear" onclick="ClearForm();">
-            <hr>
+            <fieldset id="detail">
+            <legend>Currency Value History</legend>  
             <br>
-           <br>
-            <hr>
 
+            <!-- Create base currency selector -->
+            <label for="BaseCurrency" class="formlabel" >Base Currency: </label>
+            <select id="basecurrency" name="basecurrency" data-rule-required="true" data-msg-required="Base Currency is Required" required>
+                <option value="">Select An Option</option>
+                <option value="USD">United States Dollar</option>
+                <option value="DKK">Danish Krone</option>
+                <option value="AUD">Australian Dollar</option>
+                <option value="BRL">Brazilian Real</option>
+                <option value="CAD">Canadian Dollar</option>
+                <option value="JPY">Japanese Yen</option>
+            </select>
+            <br><br>
+
+            <!-- Create convert to currency selector -->
+            <label for="ConvertTo Currency" class="formlabel" >Convert to Currency: </label>
+            <select id="converttocurrency" name="converttocurrency" data-rule-required="true" data-msg-required="Convert to Currency is Required" required>
+                <option value="">Select An Option</option>
+                <option value="USD">United States Dollar</option>
+                <option value="DKK">Danish Krone</option>
+                <option value="AUD">Australian Dollar</option>
+                <option value="BRL">Brazilian Real</option>
+                <option value="CAD">Canadian Dollar</option>
+                <option value="JPY">Japanese Yen</option>
+            </select>
+            <br><br>
+
+            <!-- Create from date and to date dropdowns -->
+            <label for="fromdate" class="formlabel">From Date:</label>
+            <input type="date" id="fromdate" name="fromdate" required>
+            <br>
+            <label for="todate" class="formlabel">To Date: </label>
+            <input type="date" id="todate" name="todate" required>
+            <br><br>
+
+            <!-- Show Results and Clear Buttons -->        
+            <label class="formlabel">Show Results: </label>
+            <span id="ShowResults"></span>
+            <br><br>
+        
+            <input type="button" value="Clear" name="Clear" onclick="clearform();">
+            <hr>
+            <!-- Create Chart --> 
             <div class="clearfix">
-                <div class="img-container">
-                    <span id="StockValueTable"></span>
-                </div>
-                <div class="img-container">
-                    <span id="StockVolumeTable"></span>
+                <div class="chart-container">
+                    <span id="ConversionHistoryChart"></span>
                 </div>
             </div>
-            <hr>
+
+            </fieldset>
+            
             
             <div class="clearfix">
-                <div class="img-container">
+                <div class="chart-container">
                     <canvas id="chartjs-0" width="400" height="400"></canvas>
-                </div>
-                <div class="img-container">
-                    <canvas id="chartjs-1" width="400" height="400"></canvas>
                 </div>
             </div>
         </div>
+        
     </form>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
