@@ -41,7 +41,7 @@
             <br><br>
 
             <!-- Create from date and to date dropdowns -->
-            <label for="fromdate" class="formlabel">From Date:</label>
+            <label for="fromdate" class="formlabel">From Date: </label>
             <input type="date" id="fromdate" name="fromdate" required>
             <br>
             <label for="todate" class="formlabel">To Date: </label>
@@ -49,12 +49,10 @@
             <br><br>
 
             <!-- Show Results and Clear Buttons -->        
-            <label class="formlabel">Show Results: </label>
-            <span id="ShowResults"></span>
-            <br><br>
-        
+            <input type="button" value="ShowResults" name="ShowResults" id="display">
             <input type="button" value="Clear" name="Clear" onclick="clearform();">
             <hr>
+
             <!-- Create Chart --> 
             <div class="clearfix">
                 <div class="chart-container">
@@ -67,11 +65,10 @@
             
             <div class="clearfix">
                 <div class="chart-container">
-                    <canvas id="chartjs-0" width="400" height="400"></canvas>
+                    <canvas id="chartjs-0"></canvas>
                 </div>
             </div>
         </div>
-        
     </form>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>

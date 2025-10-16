@@ -1,3 +1,8 @@
+$(document).ready(function(){
+    $("#display").click(getcurrency);
+    $("#clear").click(clearform);
+});
+
 /*chart sample 
 
 var ctx = document.getElementById("chartjs-0");
@@ -44,7 +49,7 @@ async function GetStock() {
     // If all of the form elements are valid, the get the form values
     // Clear any error or output messages
     document.getElementById("BaseCurrencyError").innerHTML = "";
-    document.getElementById("ConvertCurrencyError").innerHTML = "";
+    document.getElementById("ConvertToCurrencyError").innerHTML = "";
     document.getElementById("FromDateError").innerHTML = "";
     document.getElementById("ToDateError").innerHTML = "";
 
@@ -61,7 +66,7 @@ async function GetStock() {
     }
 
     // Get Convert to Currency from form
-    let ConvertCurrency = document.getElementById("ConvertCurrency").value;
+    let ConvertCurrency = document.getElementById("ConvertToCurrency").value;
 
     // Convert to Currency is Required
     if (ConvertCurrency == "") {
