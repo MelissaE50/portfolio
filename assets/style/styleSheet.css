@@ -51,8 +51,8 @@ img {
 .container {
     width: 100vw;      /* 100% of viewport width */
     height: 100vh;     /* 100% of viewport height */
-    margin: 10px;
-    padding: 5px;
+    margin: 0px;
+    padding: 0px;
 }
 
 /* ----- set background image for header ----- */
@@ -60,6 +60,9 @@ h1 {
   color: whitesmoke;
   text-shadow: 3px 3px #000000;
   font-size: 50px;
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 0px;
   background-image: url('../images/virtualData.jpg');
   background-size: cover;
   background-position: center;  
@@ -195,7 +198,7 @@ p.shift {
 .img-style-1 {
 	float: left;
 	margin-right: 10px;
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 	padding: 5px;
-	border: 1px solid #CCC;
+	border: 1px solid black;
 }	
