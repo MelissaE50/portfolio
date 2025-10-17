@@ -40,13 +40,22 @@ img {
 	max-width: 1200px;
 	margin-right: auto;
 	margin-left: auto;
-	text-align: center;
+	text-align: left;
 	background-color: lightgray;
 	margin-top: 10px;
+  margin-bottom: 10px;
 	border: 2px solid #1a1919;
 }
 
-/* set background image for header */
+/* ------- show full page ------ */
+.container {
+    width: 100vw;      /* 100% of viewport width */
+    height: 100vh;     /* 100% of viewport height */
+    margin: 10px;
+    padding: 5px;
+}
+
+/* ----- set background image for header ----- */
 h1 {
   color: whitesmoke;
   text-shadow: 3px 3px #000000;
@@ -81,7 +90,6 @@ body {margin:0;font-family:Arial}
 }
 
 .active {
-  
   color: white;
 }
 
@@ -171,13 +179,6 @@ body {margin:0;font-family:Arial}
 body {
 	font-family: "Playfair Display", serif;
 	}
-
-#container {
-	margin-right: 50px;
-	margin-left: 50px;
-	margin-top: 50px;
-	margin-bottom: 50px;
-}
 
 p {
 	margin-bottom: 20px;
