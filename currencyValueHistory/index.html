@@ -1,4 +1,5 @@
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+    <head>
     <meta charset="UTF-8">
     <meta name="description" content="Currency Value History">
     <meta name="keywords" content="JavaScript, HTML, CSS">
@@ -10,8 +11,6 @@
  <form id="myform" onsubmit="return false;">
         <div class="formcontainer">
             <h2>Currency Value History</h2>
-            <fieldset id="detail">
-            <legend>Currency Value History</legend>  
             <br>
 
             <!-- Create base currency selector -->
@@ -25,7 +24,7 @@
                 <option value="CAD">Canadian Dollar</option>
                 <option value="JPY">Japanese Yen</option>
             </select>
-            <br><br>
+            <br>
 
             <!-- Create convert to currency selector -->
             <label for="ConvertTo Currency" class="formlabel" >Convert to Currency: </label>
@@ -38,7 +37,7 @@
                 <option value="CAD">Canadian Dollar</option>
                 <option value="JPY">Japanese Yen</option>
             </select>
-            <br><br>
+            <br>
 
             <!-- Create from date and to date dropdowns -->
             <label for="fromdate" class="formlabel">From Date: </label>
@@ -59,9 +58,7 @@
                     <span id="ConversionHistoryChart"></span>
                 </div>
             </div>
-
             </fieldset>
-            
             
             <div class="clearfix">
                 <div class="chart-container">
