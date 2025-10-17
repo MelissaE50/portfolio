@@ -13,145 +13,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=PT+Sans+Narrow:wght@400;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Slabo+27px&display=swap" rel="stylesheet">
 
-    <!-- See https://www.w3schools.com/howto/howto_js_responsive_navbar_dropdown.asp-->
-<style>
-body {margin:0;font-family:Arial}
-
-.topnav {
-  overflow: hidden;
-  background-color: #333;
-}
-
-.topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.active {
-  
-  color: white;
-}
-
-.topnav .icon {
-  display: none;
-}
-
-.dropdown {
-  float: left;
-  overflow: hidden;
-}
-
-.dropdown .dropbtn {
-  font-size: 17px;    
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.topnav a:hover, .dropdown:hover .dropbtn {
-  background-color: lightslategray;
-  color: white;
-}
-
-.dropdown-content a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-@media screen and (max-width: 600px) {
-  .topnav a:not(:first-child), .dropdown .dropbtn {
-    display: none;
-  }
-  .topnav a.icon {
-    float: right;
-    display: block;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .topnav.responsive {position: relative;}
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-  .topnav.responsive .dropdown {float: none;}
-  .topnav.responsive .dropdown-content {position: relative;}
-  .topnav.responsive .dropdown .dropbtn {
-    display: block;
-    width: 100%;
-    text-align: left;
-  }
-}
-
-body {
-	font-family: "Playfair Display", serif;
-	}
-
-#container {
-	margin-right: 50px;
-	margin-left: 50px;
-	margin-top: 50px;
-	margin-bottom: 50px;
-}
-
-p {
-	margin-bottom: 20px;
-}
-
-p.shift {
-    margin-left: 30px;
-}
-
-.listmargin  {
-	margin-bottom: 20px;
-}	
-
-.img-style-1 {
-	float: left;
-	margin-right: 10px;
-    margin-bottom: 10px;
-	padding: 5px;
-	border: 1px solid #CCC;
-}	
-
-</style>
 </head>
 <body>
 <div id="container">
@@ -189,7 +50,7 @@ p.shift {
         <h2>Profile</h2>
         <div style="display: flex; align-items: center;">
   <img src="assets/images/melissaEckerHeadshot3.JPG" alt="Melissa Ecker" style="width: 120px; margin-right: 10px;">
-        <p>Aspiring software/database developer with twenty-plus years of legal experience. Embarking on a second career. Seeking to utilize my unique set of skills combining litigation, business, and technology to contribute to the success of your organization. Possess an A.S. in Computer Information Systems and certificates in Artificial Intelligence in Cybersecurity, Ethical Hacking, and Threat Hunting. Currently pursuing a Bachelor of Science in Information Science at University of Arkansas – Little Rock. Graduating May 2026.</p>
+        <p>Aspiring software/database developer with twenty-plus years of legal experience. Embarking on a second career. Seeking to utilize my unique set of skills combining litigation, business, and technology to contribute to the success of your organization. Elevator Pitch.</p>
     </div> </div>
 
     <!-- Begin Skills Section -->
@@ -264,36 +125,7 @@ p.shift {
         <h2><a href="javascriptCalculator/index.html"=>JavaScript Calculator</a></h2>
         <h2><a href="currencyValueHistory/index.html"=>Currency Value History</a></h2>
     </div>
-    
-    
 </div>
-
-<script>
-/* Click the default tab so that the profile is displayed */
-document.getElementById("defaultOpen").click();
-
-function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
-
-function openTab(evt, cityName) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
-}
-</script>
+<script src="assets/scripts/script.js"></script>
 </body>
 </html>
