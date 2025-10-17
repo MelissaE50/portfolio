@@ -3,12 +3,12 @@ $(document).ready(function(){
     $("#clear").click(clearform);
 });
 
-/*chart sample 
+/*chart sample*/ 
 
 var ctx = document.getElementById("chartjs-0");
 /*  values is an array containing the y-axis values for the chart */
 /*  dates  is an array containing the x-axis values for the chart */
-/*
+
 var myChart = new Chart(ctx, {
     "type":"line",
     "data": {
@@ -24,7 +24,7 @@ var myChart = new Chart(ctx, {
     }
 });
 
- JS fetch example 
+ /*(JS fetch example 
 <!DOCTYPE html>
 <html>
 <body>

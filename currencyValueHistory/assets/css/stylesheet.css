@@ -5,7 +5,7 @@
 
 .formlabel {
     display: inline-block;
-    width: 150px;
+    width: 175px;
     text-align: right;
     padding: 5px;
 }
@@ -19,4 +19,18 @@
   content: "";
   clear: both;
   display: table;
+}
+
+h2 {
+  font-size: 35px;
+}
+
+label {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+button {
+  font-size: 18px;
+  font-weight: bold;
 }
