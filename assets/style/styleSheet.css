@@ -1,3 +1,11 @@
+html {
+    box-sizing: border-box;
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
 
 
 /* ------ Typography -------*/
@@ -23,9 +31,34 @@ body {
 
   /* ------ Fluid Images ------- */
 img {
-  border-radius: 50%;
-  max-width: 75%;
-  margin-left: auto;
-  margin-right:auto; /*Makes sure image never gets larger than the available space*/
+  max-inline-size: 100%;
+  block-size: auto;
 }
 }
+
+#container {
+	max-width: 1200px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	background-color: #9c9c9c;
+	margin-top: 10px;
+	border: 2px solid #1a1919;
+}
+
+h1 {
+  color: whitesmoke;
+  text-shadow: 3px 3px #000000;
+  font-size: 50px;
+  background-image: url('../images/virtualData.jpg');
+  background-size: cover;        /* Makes image cover the entire h1 */
+  background-position: center;   /* Centers the image */
+  background-repeat: no-repeat;  /* Prevents image from repeating */
+  padding: 120px;                 /* Adds space around text */  
+}
+
+h2 {
+  color: black;
+  text-align: left;
+}
+
