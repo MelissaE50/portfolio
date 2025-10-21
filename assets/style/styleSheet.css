@@ -10,23 +10,20 @@ html {
 
 /* ------ Typography -------*/
 body {
-  .libre-baskerville-regular {
-  font-family: "Libre Baskerville", serif;
+ .pt-sans-narrow-regular {
+  font-family: "PT Sans Narrow", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
-.libre-baskerville-bold {
-  font-family: "Libre Baskerville", serif;
+.pt-sans-narrow-bold {
+  font-family: "PT Sans Narrow", sans-serif;
   font-weight: 700;
   font-style: normal;
 }
 
-.libre-baskerville-regular-italic {
-  font-family: "Libre Baskerville", serif;
-  font-weight: 400;
-  font-style: italic;
-}
+
+
 
 
   /* ------ Fluid Images ------- */
@@ -34,7 +31,7 @@ img {
   max-inline-size: 100%;
   block-size: auto;
 }
-}
+
 
 /* Ensure tab content stays within container */
 .tabcontent {
