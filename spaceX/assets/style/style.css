@@ -1,0 +1,375 @@
+/* CSS Demo Stylesheet */
+ 
+/* Color Theme Swatches in Hex 
+$Harbor-Colors-primary-1-hex: #092A48;
+$Harbor-Colors-primary-2-hex: #1193D1;
+$Harbor-Colors-primary-3-hex: #FFFFFF;
+$Harbor-Colors-primary-4-hex: #DDE5ED;
+$Harbor-Colors-primary-5-hex: #A6BBC8;
+*/
+
+
+/*  ---------------Box Sizing-----------------  */
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/*  ---------------Responsive Images-----------------  */
+
+img{
+  max-width: 100%;
+}
+
+/*  ---------------Utility Classes-----------------  */
+.container{
+  width:80vw;
+  max-width: 960px;
+  margin:40px auto;
+}
+
+.img-right {
+  float:right;
+  margin:10px 0 10px 20px;
+  border:1px solid #ccc;
+  padding:5px;
+  border-radius:50px;
+}
+
+.img-left {
+  float:left;
+  margin:10px 20px 10px 0px;
+  border:1px solid #ccc;
+  padding:5px;
+  border-radius:50px;
+}
+
+.img-center {
+  display:block;
+  margin:20px auto;
+  border:1px solid #ccc;
+  padding:5px;
+  border-radius:50px;
+}
+
+/*  ---------------Global Styles-----------------  */
+body {
+  font-family: "Slabo 27px", serif;
+  margin:0;
+}
+header.primary{
+  background: #1193D1;
+  text-align: center;
+  color:#ffffff;
+  text-shadow: 1px 1px #000000;
+  padding: 8em 4em;
+  position: relative;
+}
+
+header.primary::before {
+content: "";
+background-image: url("/revised-final-v1/assets/img/SpaceX-Cover-Photo.jpg");
+background-size: cover;
+position: absolute;
+top: 0px;
+right: 0px;
+bottom: 0px;
+left: 0px;
+opacity: 1.0;
+}
+
+header.primary h1 {
+  font-size: 4.2rem;
+  margin: 20px 0;
+  position: relative;
+}
+header.primary h1 a {
+  color: #ffffff;
+  background-image: url("/revised-final-v1/assets/img/SpaceX-Logo.webp");
+  display: block;
+  width: 460px;
+  height: 70px;
+  margin: 0 auto;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+header.primary h2 {
+  font-family: "Slabo 27px", serif;
+  font-size: 2em;
+  margin: 20px auto 40px;
+  position: relative;
+}
+header.primary h2 a{
+  color: #DDE5ED;
+  text-decoration: none;
+}
+
+header.primary nav ul {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0;
+  max-width: 900px;
+  margin: 20px auto;
+}
+
+header.primary nav li {
+  list-style-type: none;
+  padding: 0;
+  width: 20%;
+}
+
+header.primary nav a:link,
+header.primary nav a:visited {
+  color: #092A48;
+  text-decoration: none;
+  background-color: #000000;
+  background-color: #A6BBC8;
+  padding: 8px 16px;
+  border-radius: 10px;
+  transition: 0.5s;
+  display: block;
+}
+
+header.primary nav a:hover,
+header.primary nav a:active {
+  background-color: #A6BBC8;
+}
+
+/*--------Content----------*/
+
+section#content {
+  display:block;
+  color: #020c14;
+  background-color: #A6BBC8;
+  text-align: justify;
+  padding: 10px 32px;
+  border-radius: 10px;
+  border-top: 20px solid #ffffff;
+  border-bottom: 1px solid #092A48;
+}
+section#weather {
+  text-align: center;
+  padding: 10px 40px;
+  border-radius: 10px;
+  border-bottom: 1px solid #ffffff;
+  border-top: 20px solid #ffffff;
+}
+section#faq, #contact {
+  display:block;
+  color: #020c14;
+  background-color: #cbd1d4;
+  text-align: justify;
+  padding: 10px 40px;
+  border-radius: 10px;
+  border-bottom: 1px solid #092A48;
+  border-top: 20px solid #ffffff;
+}
+
+/*--------Articles----------*/
+section#articles {
+  background:#A6BBC8;
+}
+
+section#articles .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  gap: 20px;
+  border-bottom: 1px solid #092A48;
+  padding: 2.6rem 0;
+}
+section#articles h2,
+#content h2, #faq h2 {
+  flex: 0 0 100%;
+  color: #33536b;
+  text-shadow: 1px 1px #000000;
+  text-align: center;
+  font-family: "Slabo 27px", serif;
+  font-size: 2em;
+}
+
+section#articles h2 {
+  color:#ffffff;
+  text-shadow: 1px 1px #000000;
+}
+
+/* Ensure images stay within containers */
+#contact img,
+section img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Fix form field widths */
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+#articles article.post {
+  width: calc(33.333% - 14px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  transition: .4s;
+  font-size: .8rem;
+  border-radius: 8px;
+  background: #fff;
+}
+#articles article.post h2 {
+  font-size: 1.5em;
+  text-shadow: none;
+}
+
+#articles article.post:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+#articles article time,
+#articles article figcaption,
+#articles article footer {
+  font-size: 0.8em;
+  color: #c0c0c0;
+  text-transform: uppercase;
+}
+
+#articles .post a:link,
+#articles .post a:visited {
+  color: #1193D1;
+}
+
+#articles .post figure {
+  margin: 0;
+}
+
+#articles .post img {
+  border-radius: 8px;
+}
+
+#articles ul {
+  padding: 0 20px;
+}
+#articles li {
+  margin-bottom: 20px;
+}
+
+/*-------Independent Image Specs----------*/
+#takeoff {
+padding: 4em 0;
+}
+
+ .crew {
+  width: 100px;
+  border-radius: 10px;
+}
+#crew {
+  padding: 4em 0;
+  }
+
+#dragonlab {
+  padding: 4em 0;
+  }
+
+/*-------Aside----------*/
+aside[role="complementary"] {
+  background-color:#DDE5ED;
+  color:#092A48;
+  padding: 2.5em;
+}
+
+aside .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+aside article.widget {
+  width: 40%;
+}
+
+/*------Tables------*/
+.widget.overview table {
+  font-size: 0.4;
+  border-collapse: collapse;
+}
+
+.widget.overview table td {
+border-bottom: 1px solid #092A48;
+}
+
+.widget.overview table td:nth-child(even) {
+  text-align: right;
+}
+
+.table{
+  width: 100%;
+  table-layout: fixed;
+}
+td {
+  padding: 0.5em;
+  padding-right: 1em;
+}
+
+/*------Footer------*/
+
+footer#colophon {
+  background-color: #092A48;
+}
+
+#colophon h6 {
+  padding: 20px;
+  margin: 0;
+  color: #fff;
+  text-align: center;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+#colophon h6 a:link,
+#colophon h6 a:visited {
+  color: #1193D1;
+}
+
+/*--------Media Queries----------*/
+
+/* Adjust container for smaller screens */
+@media screen and (max-width: 768px) {
+  .container {
+    width: 90vw;
+    padding: 0 15px;
+  }
+}
+@media screen and (max-width:600px){
+
+  nav.primary ul{
+    flex-direction:column;
+    gap:10px;
+    max-width:250px;
+    margin:10px auto;
+  }
+  nav.primary ul a{
+    display:block;
+  }
+}
+
+@media screen and (max-width:450px){
+  #content{
+    flex-direction:column;
+  }
+}
