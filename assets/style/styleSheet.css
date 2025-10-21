@@ -22,8 +22,11 @@ body {
   font-style: normal;
 }
 
-
-
+.slabo-27px-regular {
+  font-family: "Slabo 27px", serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
 
   /* ------ Fluid Images ------- */
