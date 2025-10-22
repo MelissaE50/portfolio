@@ -46,28 +46,27 @@ img {
 
 /* Make sure container has proper overflow handling */
 #container {
-    max-width: 1200px;
+    max-width: 90%; 
     margin-right: auto;
     margin-left: auto;
     text-align: left;
-    background-color: lightgray;
+    background-color: lightgray; 
     margin-top: 10px;
     margin-bottom: 10px;
     border: 2px solid #1a1919;
-    overflow: auto;  /* Handles overflow content */
-    padding-bottom: 20px;  /* Add space at bottom */
+    overflow: auto;
+    padding-bottom: 20px;
 }
 
 /* Ensure paragraphs don't overflow */
 .tabcontent p {
-    
     font-size: 17px;
     word-wrap: break-word;
     overflow-wrap: break-word;
     max-width: 100%;
 }
 
-/* Ensure long text in writing samples wraps properly */
+/* Ensure long text in writing wraps properly */
 .tabcontent strong,
 .tabcontent em {
     word-wrap: break-word;
@@ -75,15 +74,13 @@ img {
 
 /* ------- show full page ------ */
 .container {
-    width: 100vw;      /* 100% of viewport width */
-    height: 100vh;     /* 100% of viewport height */
+    width: 100vw; /* 100% of viewport width */
+    height: 100vh; /* 100% of viewport height */
     position: relative;
     overflow: hidden;
     margin: 0px;
     padding: 0px;
 }
-
-
 
 /* ----- set background image for header ----- */
 h1 {
@@ -97,7 +94,7 @@ h1 {
   background-size: cover;
   background-position: center;  
   background-repeat: no-repeat;  
-  padding: 120px;  /* Adds space around text */  
+  padding: 120px;    
 }
 
 h2 {
@@ -228,9 +225,10 @@ p.shift {
 
 .img-style-1 {
 	float: left;
-	margin-right: 10px;
-  margin-bottom: 10px;
-	padding: 5px;
-	border: 1px solid black;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 50%; 
 }	
 }
