@@ -95,3 +95,4 @@ function clearform() {
     context0.clearRect(0, 0, canvas0.width, canvas0.height);
    
 }
+}
