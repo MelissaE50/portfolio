@@ -103,8 +103,8 @@ function clearErrors() {
                         label: `One ${baseCurrency} to ${convertCurrency}`,
                         data: values,
                         fill: false,
-                        borderColor: 'rgba(236, 45, 173, 1)',
-                        backgroundColor: 'rgba(236, 45, 173, 1)',
+                        borderColor: 'hsl(194, 87%, 56%)',
+                        backgroundColor: 'hsl(194, 87%, 56%)',
                         tension: 0.2
                     }]
                 },
