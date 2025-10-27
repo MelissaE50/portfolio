@@ -211,6 +211,13 @@ body {
 	font-family: "Playfair Display", serif;
 	}
 
+  #container {
+	margin-right: 50px;
+	margin-left: 50px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
 p {
 	margin-bottom: 20px;
 }
