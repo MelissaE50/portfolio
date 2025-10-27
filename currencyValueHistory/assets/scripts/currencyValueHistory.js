@@ -54,7 +54,7 @@ function clearErrors() {
             const fromDate = document.getElementById("fromdate").value;
             const toDate = document.getElementById("todate").value;
 
-            // Construct the Polygon.io API URL
+            // Construct API URL
             const url = `https://api.polygon.io/v2/aggs/ticker/C:${baseCurrency}${convertCurrency}/range/1/day/${fromDate}/${toDate}?adjusted=true&sort=asc&apiKey=${apiKey}`;
 
             try {
@@ -72,6 +72,7 @@ function clearErrors() {
             }
         }
 
+        //display chart
         function displayChart(results, baseCurrency, convertCurrency) {
             const dates = [];
             const values = [];
@@ -89,7 +90,7 @@ function clearErrors() {
                 myChart.destroy();
             }
 
-            // Show chart container and set title
+            // Show chart container and with title
             document.getElementById("chartContainer").style.display = "block";
             document.getElementById("chartTitle").innerHTML = `${baseCurrency} to ${convertCurrency}`;
 
@@ -115,14 +116,18 @@ function clearErrors() {
             });
         }
 
+        //clear form values
         function clearForm() {
             document.getElementById("basecurrency").value = "";
             document.getElementById("converttocurrency").value = "";
             document.getElementById("fromdate").value = "";
             document.getElementById("todate").value = "";
-            
-            if (myChart !== null) {
-                myChart.destory();
+            clearErrors();
+
+            // Clear chart
+            document.getElementById("chartContainer").style.display = "none";
+            if (myChart) {
+                myChart.destroy();
                 myChart = null;
             }
         }

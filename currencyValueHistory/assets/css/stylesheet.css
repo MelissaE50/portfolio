@@ -48,10 +48,5 @@ select, input[type="date"] {
   display: none;
 }
 
-#chartTitle {
-  text-align: center;
-  font-size: 24px;
-  font-weight: bold;
-  margin: 20px 0;
-}
+
 
