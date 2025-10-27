@@ -1,98 +1,128 @@
-$(document).ready(function(){
-    $("#display").click(getcurrency);
-    $("#clear").click(clearform);
-});
+/* my api key CzRy184vwLiWhwzMZ_cK4fEdZgUyoHv2*/
 
-/*chart sample*/ 
+ let apiKey = 'CzRy184vwLiWhwzMZ_cK4fEdZgUyoHv2';
 
-var ctx = document.getElementById("chartjs-0");
-/*  values is an array containing the y-axis values for the chart */
-/*  dates  is an array containing the x-axis values for the chart */
+       let myChart = null; 
 
-var myChart = new Chart(ctx, {
-    "type":"line",
-    "data": {
-        "labels": dates,
-        "datasets":[{
-            "data": values,
-            fill: false
-        }]
-    },
-    "options":{ 
-        responsive: false,
-        maintainAspectRatio: true,
-    }
-});
+function clearErrors() {
+            document.getElementById("basecurrencyerror").innerHTML = "";
+            document.getElementById("converttocurrencyerror").innerHTML = "";
+            document.getElementById("fromdateerror").innerHTML = "";
+            document.getElementById("todateerror").innerHTML = "";
+        }
 
- 
-async function GetStock() {
-    "use strict";
+        function validateForm() {
+            clearErrors();
+            let valid = true;
 
-    // If all of the form elements are valid, get the form values
-    // Clear any error or output messages
-    document.getElementById("BaseCurrencyError").innerHTML = "";
-    document.getElementById("ConvertToCurrencyError").innerHTML = "";
-    document.getElementById("FromDateError").innerHTML = "";
-    document.getElementById("ToDateError").innerHTML = "";
+            const baseCurrency = document.getElementById("basecurrency").value;
+            const convertCurrency = document.getElementById("converttocurrency").value;
+            const fromDate = document.getElementById("fromdate").value;
+            const toDate = document.getElementById("todate").value;
 
-    // Error Flag - True if an error has occurred
-    let errorflag = false;
+            if (baseCurrency === "") {
+                document.getElementById("basecurrencyerror").innerHTML = "Base Currency is Required";
+                valid = false;
+            }
 
-    // Get Base Currency from form
-    let BaseCurrency = document.getElementById("BaseCurrency").value;
+            if (convertCurrency === "") {
+                document.getElementById("converttocurrencyerror").innerHTML = "Convert To Currency is Required";
+                valid = false;
+            }
 
-    // Base Currency is Required
-    if (BaseCurrency == "") {
-        document.getElementById("BaseCurrencyError").innerHTML = "Base Currency is Required";
-        errorflag = true;
-    }
+            if (fromDate === "") {
+                document.getElementById("fromdateerror").innerHTML = "From Date is Required";
+                valid = false;
+            }
 
-    // Get Convert to Currency from form
-    let ConvertCurrency = document.getElementById("ConvertToCurrency").value;
+            if (toDate === "") {
+                document.getElementById("todateerror").innerHTML = "To Date is Required";
+                valid = false;
+            }
 
-    // Convert to Currency is Required
-    if (ConvertCurrency == "") {
-        document.getElementById("ConvertCurrencyError").innerHTML = "Convert to Currency is Required";
-        errorflag = true;
-    }
-    
-    // Get FromDate from form
-    let FromDate = document.getElementById("FromDate").value;
 
-    // FromDate is Required
-    if (FromDate == "") {
-        document.getElementById("FromDateError").innerHTML = "From Date is Required";
-        errorflag = true;
-    }
+            return valid;
+        }
 
-    // Get ToDate from form
-    let ToDate = document.getElementById("ToDate").value;
+        async function showResults() {
+            if (!validateForm()) {
+                return;
+            }
 
-    // ToDate is Required
-    if (ToDate == "") {
-        document.getElementById("ToDateError").innerHTML = "To Date is Required";
-        errorflag = true;
-    }
+            const baseCurrency = document.getElementById("basecurrency").value;
+            const convertCurrency = document.getElementById("converttocurrency").value;
+            const fromDate = document.getElementById("fromdate").value;
+            const toDate = document.getElementById("todate").value;
 
-    // No Errors
-    /*if (!errorflag) {        
-        
-        var apiKey = "35eaVfKsObXpSg2O4kMLj9udr2DgVW1f"*/
+            // Construct the Polygon.io API URL
+            const url = `https://api.polygon.io/v2/aggs/ticker/C:${baseCurrency}${convertCurrency}/range/1/day/${fromDate}/${toDate}?adjusted=true&sort=asc&apiKey=${apiKey}`;
 
-     
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
 
-function clearform() {
-    "use strict";
-    document.getElementById("basecurrency").value = "";
-    document.getElementById("converttocurrency").value = "";
-    document.getElementById("fromdate").value = "";
-    document.getElementById("todate").value = "";
-    
-   
-    /* Ugly Code to Erase Canvas */
-    let canvas0 = document.getElementById("chartjs-0");
-    let context0 = canvas0.getContext('2d');    
-    context0.clearRect(0, 0, canvas0.width, canvas0.height);
-   
-}
-}
+                if (data.status === "OK" && data.results && data.results.length > 0) {
+                    displayChart(data.results, baseCurrency, convertCurrency);
+                } else {
+                    alert("There is no data available for the selected date currencies and/or date range. Please try again.");
+                }
+            } catch (error) {
+                console.error("Error fetching data:", error);
+                alert("Error obtaining currency data. Please try again.");
+            }
+        }
+
+        function displayChart(results, baseCurrency, convertCurrency) {
+            const dates = [];
+            const values = [];
+
+            // Obtain dates and closing values from results
+            results.forEach(result => {
+                const date = new Date(result.t);
+                const formattedDate = `${date.getMonth() + 1}/${date.getDate()}`;
+                dates.push(formattedDate);
+                values.push(result.c); // 'c' is the closing price
+            });
+
+            // Destroy the previous chart if it exists
+            if (myChart) {
+                myChart.destroy();
+            }
+
+            // Show chart container and set title
+            document.getElementById("chartContainer").style.display = "block";
+            document.getElementById("chartTitle").innerHTML = `${baseCurrency} to ${convertCurrency}`;
+
+            // Create new chart
+            const ctx = document.getElementById("chartjs-0").getContext('2d');
+            myChart = new Chart(ctx, {
+                type: "line",
+                data: {
+                    labels: dates,
+                    datasets: [{
+                        label: `One ${baseCurrency} to ${convertCurrency}`,
+                        data: values,
+                        fill: false,
+                        borderColor: 'rgba(236, 45, 173, 1)',
+                        backgroundColor: 'rgba(236, 45, 173, 1)',
+                        tension: 0.2
+                    }]
+                },
+                options: {
+                    responsive: false,
+                    maintainAspectRatio: true,
+                }
+            });
+        }
+
+        function clearForm() {
+            document.getElementById("basecurrency").value = "";
+            document.getElementById("converttocurrency").value = "";
+            document.getElementById("fromdate").value = "";
+            document.getElementById("todate").value = "";
+            
+            if (myChart !== null) {
+                myChart.destory();
+                myChart = null;
+            }
+        }

@@ -30,7 +30,27 @@ label {
   font-weight: bold;
 }
 
-button {
-  font-size: 18px;
-  font-weight: bold;
-}
+button, input[type="button"] {
+            font-size: 18px;
+            
+            padding: 8px 16px;
+            margin: 10px;
+        }
+
+        select, input[type="date"] {
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        #chartContainer {
+            margin-top: 20px;
+            display: none;
+        }
+
+        #chartTitle {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+

@@ -1,3 +1,4 @@
+<! DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
     <head>
     <meta charset="UTF-8">
@@ -6,17 +7,25 @@
     <meta name="author" content="Melissa Ecker">
     <title>Currency Value History</title>
     <link rel="stylesheet" type="text/css" href="assets/css/stylesheet.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
 </head>
 <body>
- <form id="myform" onsubmit="return false;">
+    <form id="myform" onsubmit="return false;">
         <div class="formcontainer">
             <h2>Currency Value History</h2>
+           
             <br>
 
             <!-- Create base currency selector -->
             <label for="BaseCurrency" class="formlabel">Base Currency: </label>
-            <select id="basecurrency" name="basecurrency" data-rule-required="true" data-msg-required="Base Currency is Required" required>
-                <option value="">Select a Currency</option>
+            <select id="basecurrency" name="basecurrency">
+                <option value="">Select a Currency..</option>
                 <option value="USD">United States Dollar</option>
                 <option value="DKK">Danish Krone</option>
                 <option value="AUD">Australian Dollar</option>
@@ -24,13 +33,13 @@
                 <option value="CAD">Canadian Dollar</option>
                 <option value="JPY">Japanese Yen</option>
             </select>
-            <label class="error" for="BaseCurrency" id="BaseCurrencyError"></label>
+            <label class="error" id="basecurrencyerror"></label>
             <br>
 
             <!-- Create convert to currency selector -->
             <label for="ConvertToCurrency" class="formlabel">Convert to Currency: </label>
-            <select id="converttocurrency" name="converttocurrency" data-rule-required="true" data-msg-required="Convert to Currency is Required" required>
-                <option value="">Select a Currency</option>
+            <select id="converttocurrency" name="converttocurrency">
+                <option value="">Select a Currency..</option>
                 <option value="USD">United States Dollar</option>
                 <option value="DKK">Danish Krone</option>
                 <option value="AUD">Australian Dollar</option>
@@ -38,36 +47,33 @@
                 <option value="CAD">Canadian Dollar</option>
                 <option value="JPY">Japanese Yen</option>
             </select>
-            <label class="error" for="ConvertToCurrency" id="ConvertToCurrencyError"></label>
+            <label class="error" id="converttocurrencyerror"></label>
             <br>
 
             <!-- Create from date and to date dropdowns -->
             <label for="fromdate" class="formlabel">From Date: </label>
-            <input type="date" id="fromdate" name="fromdate" required>
-            <label class="error" for="FromDate" id="FromDateError"></label>
+            <input type="date" id="fromdate" name="fromdate" placeholder="mm/dd/yyyy">
+            <label class="error" id="fromdateerror"></label>
             <br>
             <label for="todate" class="formlabel">To Date: </label>
-            <input type="date" id="todate" name="todate" required>
-            <label class="error" for="ToDate" id="ToDateError"></label>
+            <input type="date" id="todate" name="todate" placeholder="mm/dd/yyyy">
+            <label class="error" id="todateerror"></label>
             <br><br>
 
-            <!-- Show Results and Clear Buttons -->        
-            <input type="button" value="Show Results" name="ShowResults" onclick="ShowResults();">
-            <input type="button" value="Clear" name="Clear" onclick="clearform();">
-            <hr>
-            </fieldset>
+             <!-- Show Results and Clear Buttons -->
+            <input type="button" value="Show Results" name="ShowResults" onclick="showResults()">
+            <input type="button" value="Clear" name="Clear" onclick="clearForm()">
             
-            <!-- Create Chart --> 
-            <canvas id="chartjs-0"></canvas>
-            </div>
+            <hr>
+            
+            <!-- Chart Container -->
+            <div id="chartContainer">
+                <div id="chartTitle"></div>
+                <canvas id="chartjs-0" width="800" height="400"></canvas>
             </div>
         </div>
     </form>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-    <script src="scripts/script.js"></script>
+    <script src="assets/scripts/currencyValueHistory.js"></script>
 </body>
 </html>
 
