@@ -1,13 +1,13 @@
 .formcontainer {
     width: 1000px;
-    padding: 5px;
+    padding: 12px;
 }
 
 .formlabel {
     display: inline-block;
     width: 175px;
     text-align: right;
-    padding: 5px;
+    padding: 12px;
 }
 
 .error {
@@ -32,7 +32,6 @@ label {
 
 button, input[type="button"] {
             font-size: 18px;
-            
             padding: 8px 16px;
             margin: 10px;
         }
