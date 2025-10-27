@@ -1,18 +1,18 @@
 .formcontainer {
-    width: 1000px;
-    padding: 12px;
+  width: 1000px;
+  padding: 12px;
 }
 
 .formlabel {
-    display: inline-block;
-    width: 175px;
-    text-align: right;
-    padding: 12px;
+  display: inline-block;
+  width: 175px;
+  text-align: right;
+  padding: 12px;
 }
 
 .error {
-    color: red;
-    padding-left: 5px;
+  color: red;
+  padding-left: 5px;
 }
 
 .clearfix::after {
@@ -31,27 +31,27 @@ label {
 }
 
 button, input[type="button"] {
-            font-size: 18px;
-            padding: 8px 16px;
-            margin: 10px;
-            background-color: hsl(194, 87%, 56%);
-            border: none;
-        }
+  font-size: 18px;
+  padding: 8px 16px;
+  margin: 10px;
+  background-color: hsl(194, 87%, 56%);
+  border: none;
+}
 
-        select, input[type="date"] {
-            padding: 5px;
-            font-size: 16px;
-        }
+select, input[type="date"] {
+  padding: 5px;
+  font-size: 16px;
+}
 
-        #chartContainer {
-            margin-top: 20px;
-            display: none;
-        }
+#chartContainer {
+  margin-top: 20px;
+  display: none;
+}
 
-        #chartTitle {
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-            margin: 20px 0;
-        }
+#chartTitle {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 20px 0;
+}
 
