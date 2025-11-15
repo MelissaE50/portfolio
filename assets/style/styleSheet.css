@@ -230,12 +230,35 @@ p.shift {
 	margin-bottom: 20px;
 }	
 
+.profile-row {
+    display: flex;
+    align-items: flex-start;
+}
+
+.profile-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    margin-right: 24px;    
+}
+
+.profile-heading {
+    margin: 0 0 10px;
+    text-align: center;
+}
+
 .img-style-1 {
-	float: left;
-    margin-right: 10px;
+    width: 120px;
+    margin-right: 24px;   
     margin-bottom: 10px;
     padding: 5px;
     border: 1px solid black;
-    border-radius: 50%; 
-}	
+    border-radius: 50%;
+}
+
+.profile-text {
+    margin-top: 40px;
+}
+
+
 }
