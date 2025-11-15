@@ -90,7 +90,7 @@ body {
 	margin-left: 20px;
 }
 .alert{
-	background: pink;
+	background: rgb(59, 139, 243);
 	padding:5px;
 	border:1px solid #c0c0c0;
 }
