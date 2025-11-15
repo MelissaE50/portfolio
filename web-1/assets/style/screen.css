@@ -24,17 +24,26 @@ body {
 	color: #FFF;
 }
 
+#header h1 {
+    position: relative;
+    width: 800px;
+    height: 140px;
+    margin: 0 auto;
+}
+
 #header h1 a {
-    color: #ffffff; 
-  	width: 800px;
-  	height: 140px;
-  	display: block;
-  	background-image: url("../images/webpage-header.jpg");
-  	margin: 0 auto;
-  	text-indent: 100%;
-  	white-space: nowrap;
-  	overflow: hidden;
-  
+    color: white;
+    text-decoration: none;
+    font-size: 40px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/webpage-header.jpg");
+    background-size: cover;
+    background-position: center;
 }
 
 #nav {
@@ -63,15 +72,14 @@ body {
 	color: #FFF;
 }
 #nav ul li a:hover {
-	border-bottom-width: 3px;
-	border-bottom-style: solid;
-	border-bottom-color: #CCC;
+	color: darkblue;
+	background-color: lightgray;
 }
 #content {
 	margin: 20px;
 }
 #content h2 {
-	margin: 20px;
+	margin: 0 0 15px 0;
 }
 #content p {
 	margin-top: 5px;
@@ -89,11 +97,20 @@ body {
 	margin-right: 20px;
 	margin-left: 20px;
 }
-.alert{
-	background: rgb(59, 139, 243);
-	padding:5px;
-	border:1px solid #c0c0c0;
+
+p.alert {
+    background: rgb(59, 139, 243);
+    color: darkblue;
+    border: 1px solid #c0c0c0;
+
+    margin: 0 0 10px 0;
+    padding: 5px;
+
+    width: 100%;
+    box-sizing: border-box;
+    clear: both;
 }
+
 #content img {
 	float: right;
 	border: 1px solid #c0c0c0;
