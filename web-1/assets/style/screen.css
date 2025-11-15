@@ -3,6 +3,7 @@
 	margin: 0px;
 	padding: 0px;
 }
+
 body {
 	text-align: center;
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -12,6 +13,7 @@ body {
 	background-image:url("../images/webpage-background.jpg");
 	background-repeat: repeat-x;
 }
+
 #container {
 	max-width: 800px;
 	margin-right: auto;
@@ -49,21 +51,25 @@ body {
 #nav {
 	background-color: #000;
 }
+
 #nav ul {
 	list-style-type: none;
 	margin-left: 10px;
 }
+
 #nav ul li {
 	display: inline;
 	height: 35px;
 	line-height: 35px;
 }
+
 #nav ul li a {
 	display: inline-block;
 	padding-right: 10px;
 	padding-left: 10px;
 	font-size: 18px;
 }
+
 #nav ul li a:link, #nav ul li a:visited {
 	text-decoration: none;
 	border-bottom-width: 4px;
@@ -71,26 +77,32 @@ body {
 	border-bottom-color: #000;
 	color: #FFF;
 }
+
 #nav ul li a:hover {
 	color: darkblue;
 	background-color: lightgray;
 }
+
 #content {
 	margin: 20px;
 }
+
 #content h2 {
 	margin: 0 0 15px 0;
 }
+
 #content p {
 	margin-top: 5px;
 	margin-bottom: 15px;
 	overflow:hidden;
 }
+
 #footer {
 	background-color: #000;
 	color: #FFF;
 	height: 25px;
 }
+
 #footer h6 {
 	font-size: 12px;
 	line-height: 25px;
