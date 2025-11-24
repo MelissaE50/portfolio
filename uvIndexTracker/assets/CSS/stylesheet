@@ -1,6 +1,7 @@
 .formcontainer {
   width: 1000px;
   padding: 12px;
+  margin: 0 auto;
 }
 
 .formlabel {

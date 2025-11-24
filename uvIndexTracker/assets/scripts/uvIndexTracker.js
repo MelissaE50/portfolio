@@ -27,6 +27,7 @@ async function displayUVData() {
     const location = document.getElementById("location").value.trim();
 
     try {
+        // Enter Zip Code or City using OpenMeteo.com geocoding to find location
         const geoUrl =
             `https://geocoding-api.open-meteo.com/v1/search?` +
             `name=${encodeURIComponent(location)}` +
@@ -46,7 +47,7 @@ async function displayUVData() {
         const locationName = loc.name;
 
 
-        // Fetch UV Index (5 days before + today + 5 days after)
+        // Get UV Index (5 days before + today + 5 days after)
         const uvUrl =
             `https://api.open-meteo.com/v1/forecast` +
             `?latitude=${lat}&longitude=${lon}` +
@@ -74,7 +75,6 @@ async function displayUVData() {
 }
 
 function displayChart(dates, uvValues, locationName) {
-    // Format dates as MM/DD
     const formattedDates = dates.map(d => {
         const date = new Date(d);
         return `${date.getMonth() + 1}/${date.getDate()}`;
