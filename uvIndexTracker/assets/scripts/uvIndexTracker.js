@@ -96,8 +96,8 @@ function displayChart(dates, uvValues, locationName) {
                 label: `Daily UV Index`,
                 data: uvValues,
                 fill: true,
-                borderColor: 'rgba(105, 220, 235, 1)',
-                backgroundColor: 'rgba(5, 140, 173, 0.2)',
+                borderColor: '#f8dc3d',
+                backgroundColor: '#fbfd60ff',
                 tension: 0.3
             }]
         },
