@@ -1,0 +1,52 @@
+<! DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Arkansas Film Database Project">
+    <meta name="keywords" content="JavaScript, HTML, CSS">
+    <meta name="author" content="Melissa Ecker">
+    <title>Arkansas Film Database</title>
+    <link rel="stylesheet" type="text/css" href="assets/style/styleSheet.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
+</head>
+<body>
+    <form id="myform" onsubmit="return false;">
+    <div class="formcontainer">
+
+        <div class="topPanel">
+        <h2>Arkansas Film Database</h2>
+
+        <br>
+
+        <!-- Zip Code Input -->
+        <label for="location" class="formlabel">Enter a City or ZIP Code: </label>
+        <input type="text" id="location" name="location" placeholder="e.g., 72023 or Cabot">
+        <label class="error" id="locationerror"></label>
+
+        <br><br>
+
+        <!-- Display Results and Clear Buttons -->
+        <div class="button-row">
+        <input type="button" value="Display UV Data" onclick="displayUVData()">
+        <input type="button" value="Clear Form" onclick="clearForm()">
+        </div>
+    </div>
+        <hr>
+
+        <!-- Chart Container -->
+        <div id="chartContainer" style="display:none;">
+            <div id="chartTitle"></div>
+            <canvas id="chartjs-0" width="800" height="400"></canvas>
+        </div>
+    </div>
+</form>
+    <script src="assets/scripts/arkFilmDBP.js"></script>
+</body>
+</html>
+
