@@ -87,6 +87,57 @@ h3 {
   transform: translateY(-2px);
 }
 
+/*style search button*/
+.search-wrap {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.search-wrap input {
+  width: min(520px, 80vw);
+  padding: 12px 14px;
+  font-size: 18px;
+  font-family: "Playfair Display", serif;
+
+  border-radius: 10px;
+  border: 2px solid rgba(255, 250, 205, 0.7);
+  background: rgba(0, 0, 0, 0.55);
+  color: lightgoldenrodyellow;
+
+  outline: none;
+}
+
+.search-wrap input::placeholder {
+  color: rgba(255, 250, 205, 0.75);
+}
+
+.search-wrap input:focus {
+  border-color: lightgoldenrodyellow;
+  box-shadow: 0 0 0 4px rgba(255, 250, 205, 0.15);
+}
+
+.search-wrap button {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: lightgoldenrodyellow;
+  border: 2px solid lightgoldenrodyellow;
+  padding: 12px 18px;
+
+  font-size: 18px;
+  font-family: "Playfair Display", serif;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.search-wrap button:hover {
+  background-color: lightgoldenrodyellow;
+  color: black;
+  transform: translateY(-2px);
+}
+
 /* style footer and keep at bottom */
 .footer {
   margin-top: auto; 
