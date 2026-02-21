@@ -16,36 +16,25 @@
 
 </head>
 <body>
-    <form id="myform" onsubmit="return false;">
+   <main class="page-content">
     <div class="formcontainer">
+    <div class="topPanel">
+  <div class="header-overlay">
+    <h1>Arkansas Film Database</h1>
+    <h3>Highlighting Arkansas's Contributions to Film and Television</h3>
 
-        <div class="topPanel">
-        <h2>Arkansas Film Database</h2>
-
-        <br>
-
-        <!-- Zip Code Input -->
-        <label for="location" class="formlabel">Enter a City or ZIP Code: </label>
-        <input type="text" id="location" name="location" placeholder="e.g., 72023 or Cabot">
-        <label class="error" id="locationerror"></label>
-
-        <br><br>
-
-        <!-- Display Results and Clear Buttons -->
-        <div class="button-row">
-        <input type="button" value="Display UV Data" onclick="displayUVData()">
-        <input type="button" value="Clear Form" onclick="clearForm()">
-        </div>
+    <div class="nav-buttons">
+      <button id="filmsBtn">Films</button>
+      <button id="peopleBtn">Actors / Actresses</button>
     </div>
-        <hr>
+  </div>
+</div>
+</main>
 
-        <!-- Chart Container -->
-        <div id="chartContainer" style="display:none;">
-            <div id="chartTitle"></div>
-            <canvas id="chartjs-0" width="800" height="400"></canvas>
-        </div>
-    </div>
-</form>
+<!-- footer -->
+   <footer class="footer">
+  © 2026 Melissa Ecker
+</footer>
     <script src="assets/scripts/arkFilmDBP.js"></script>
 </body>
 </html>

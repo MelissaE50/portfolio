@@ -1,0 +1,100 @@
+html {
+    box-sizing: border-box;
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+
+  img {
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+/*background photo specs*/
+body {
+  text-align: center;
+  background-image: url("../images/filmBackground.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  line-height: 1.5em;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/*style headers*/
+h1 { 
+  text-align: center;
+  color: lightgoldenrodyellow;
+  text-shadow: 2px 2px #000000;
+  margin: 0;
+  padding-top: 40px;
+  font-size: 48px;
+}
+
+h3 { 
+  text-align: center;
+  color: lightgoldenrodyellow;
+  text-shadow: 2px 2px #000000;
+  margin: 10px 0 20px 0;
+  font-size: 22px;
+}
+
+.topPanel {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Dark overlay box */
+.header-overlay {
+  background: rgba(0, 0, 0, 0.55);  /* subtle dark overlay */
+  padding: 30px 40px 40px;
+  margin-top: 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+}
+
+/* Button container */
+.nav-buttons {
+  margin-top: 20px;
+}
+
+/* Buttons */
+.nav-buttons button {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: lightgoldenrodyellow;
+  border: 2px solid lightgoldenrodyellow;
+  padding: 12px 28px;
+  margin: 0 10px;
+  font-size: 18px;
+  font-family: "Playfair Display", serif;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.nav-buttons button:hover {
+  background-color: lightgoldenrodyellow;
+  color: black;
+  transform: translateY(-2px);
+}
+
+/* style footer and keep at bottom */
+.footer {
+  margin-top: auto; 
+  text-align: center;
+  padding: 12px 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: lightgoldenrodyellow;
+  font-family: "Playfair Display", serif;
+  text-shadow: 1px 1px #000;
+  border-top: 1px solid rgba(255, 250, 205, 0.4);
+}
