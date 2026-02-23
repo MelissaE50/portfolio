@@ -15,7 +15,7 @@ html {
 /*background photo specs*/
 body {
   text-align: center;
-  /*background-image: url("../images/filmBackground.jpg");*/
+  background-image: url("../images/filmBackground.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
