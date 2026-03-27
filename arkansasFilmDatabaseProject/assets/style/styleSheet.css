@@ -7,10 +7,110 @@ html {
     box-sizing: inherit;
   }
 
-  img {
+  
+
+ /* ------ Fluid Images ------- */
+img {
   max-inline-size: 100%;
   block-size: auto;
 }
+
+/* Film gallery grid */
+.film-gallery {
+  width: min(1200px, 92%);
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  padding: 0 10px 30px;
+}
+
+/* Each film card */
+.film-card {
+  display: block;
+  text-decoration: none;
+  color: lightgoldenrodyellow;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 14px;
+  padding: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.film-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.45);
+}
+
+/* Film poster images */
+.film-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+  border: 2px solid rgba(255, 250, 205, 0.5);
+}
+
+/* Film title text */
+.film-card span {
+  display: block;
+  margin-top: 12px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.3;
+  color: lightgoldenrodyellow;
+  text-shadow: 1px 1px 2px #000;
+}
+
+/* Actor/Actress gallery grid */
+.actor-gallery {
+  width: min(1200px, 92%);
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  padding: 0 10px 30px;
+}
+
+/* Each actor card */
+.actor-card {
+  display: block;
+  text-decoration: none;
+  color: lightgoldenrodyellow;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 14px;
+  padding: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.actor-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.45);
+}
+
+/* Actor/Actress images */
+.actor-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+  border: 2px solid rgba(255, 250, 205, 0.5);
+}
+
+/* Actor/Actress Name text */
+.actor-card span {
+  display: block;
+  margin-top: 12px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.3;
+  color: lightgoldenrodyellow;
+  text-shadow: 1px 1px 2px #000;
+}
+
 
 /*background photo specs*/
 body {
@@ -39,6 +139,13 @@ h1 {
   font-size: 48px;
 }
 
+h2 { 
+  text-align: center;
+  color: lightgoldenrodyellow;
+  text-shadow: 2px 2px #000000;
+  margin: 10px 0 20px 0;
+  font-size: 40px;
+}
 h3 { 
   text-align: center;
   color: lightgoldenrodyellow;
