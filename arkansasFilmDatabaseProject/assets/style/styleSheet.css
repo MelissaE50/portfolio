@@ -46,7 +46,8 @@ img {
 .film-card img {
   width: 100%;
   height: 300px;
-  object-fit: cover;
+  object-fit: contain;
+  background: black;
   display: block;
   border-radius: 10px;
   border: 2px solid rgba(255, 250, 205, 0.5);
