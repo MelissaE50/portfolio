@@ -37,11 +37,6 @@ img {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.film-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.45);
-}
-
 /* Film poster images */
 .film-card img {
   width: 100%;
@@ -86,11 +81,6 @@ img {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.actor-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.45);
-}
-
 /* Actor/Actress images */
 .actor-card img {
   width: 100%;
@@ -111,7 +101,6 @@ img {
   color: lightgoldenrodyellow;
   text-shadow: 1px 1px 2px #000;
 }
-
 
 /*background photo specs*/
 body {
