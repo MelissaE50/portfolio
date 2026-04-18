@@ -249,3 +249,39 @@ h3 {
   text-shadow: 1px 1px #000;
   border-top: 1px solid rgba(255, 250, 205, 0.4);
 }
+
+.details-container {
+  width: min(900px, 92%);
+  margin: 40px auto;
+  padding: 0 10px 30px;
+}
+
+.details-card {
+  background: rgba(0, 0, 0, 0.65);
+  color: lightgoldenrodyellow;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  text-align: left;
+}
+
+.details-card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: lightgoldenrodyellow;
+  text-shadow: 2px 2px #000;
+}
+
+.details-poster {
+  display: block;
+  width: min(320px, 100%);
+  margin: 0 auto 24px;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 250, 205, 0.5);
+  background: black;
+}
+
+.details-card p {
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
