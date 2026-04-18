@@ -25,48 +25,52 @@ async function handleSearch() {
   const searchInput = document.getElementById("searchInput");
   const query = searchInput.value.trim();
 
-  // Search query using if statement and displays message if box is empty, try/catch block for error handling
+  // Prevent empty searches before calling the API
   if (!query) {
     alert("Please enter a film, actor, or actress name.");
     return;
   }
 
   try {
-    // Search for a movie first on TMDB, use API to retrieve information, if applicable
-    const movieResponse = await fetch(
-      `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(query)}`
+    // Search for a film title first on TMDB (encodeURIComponent prevents spaces and special characters from breaking the URL)
+    const filmResponse = await fetch(
+      `${BASE_URL}/search/film?api_key=${API_KEY}&query=${encodeURIComponent(query)}`
     );
 
-    if (!movieResponse.ok) {
-      throw new Error(`Movie search failed. Status: ${movieResponse.status}`);
+    // Throws an error if no film is found
+    if (!filmResponse.ok) {
+      throw new Error(`Film search failed. Status: ${filmResponse.status}`);
     }
 
-    const movieData = await movieResponse.json(); // Convert movieResponse from JSON into js object for display
+    // Convert filmResponse from JSON into js object for display
+    const filmData = await filmResponse.json(); 
 
-    // Returns movie info if there are results for the movie searched for    
-    if (movieData.results && movieData.results.length > 0) {
-      window.location.href = `filmsDetails.html?id=${movieData.results[0].id}`;
+    // Redirect to filmsDetails page if there are results  
+    if (filmData.results && filmData.results.length > 0) {
+      window.location.href = `filmsDetails.html?id=${filmData.results[0].id}`;
       return;
     }
 
-    // If no movie is found, search for actor/actress, uses API to retrieve information
-    const personResponse = await fetch(
-      `${BASE_URL}/search/person?api_key=${API_KEY}&query=${encodeURIComponent(query)}`
+    // If no film is found, search for actor/actress on TMDB
+    const actorResponse = await fetch(
+      `${BASE_URL}/search/actor?api_key=${API_KEY}&query=${encodeURIComponent(query)}`
     );
 
-    if (!personResponse.ok) {
-      throw new Error(`Person search failed. Status: ${personResponse.status}`);
+    // Throws an error if no actor/actress is found
+    if (!actorResponse.ok) {
+      throw new Error(`Actor search failed. Status: ${actorResponse.status}`);
     }
 
-    const personData = await personResponse.json(); // Convert personResponse from JSON into js object for display
+    // Convert personResponse from JSON into js object for display
+    const actorData = await actorResponse.json(); 
 
-     // Returns actor/actress info if there are results for the actor/actress searched for
-    if (personData.results && personData.results.length > 0) {
-      window.location.href = `actor-actressesDetails.html?id=${personData.results[0].id}`;
+     // Redirect to actors-actressesDetails page if there are results
+    if (actorData.results && actorData.results.length > 0) {
+      window.location.href = `actors-actressesDetails.html?id=${actorData.results[0].id}`;
       return;
     }
 
-     // Returns error message if there are no results found for the film, actor, or actress
+     // Returns error message if there are no results found
     alert("No matching film, acotr, or actress was found.");
   } catch (error) {
     console.error("Search error:", error);
