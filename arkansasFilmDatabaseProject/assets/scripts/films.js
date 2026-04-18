@@ -107,12 +107,14 @@ async function loadFilmDetails() {
           .join(", ")
       : "Unavailable";
 
-    const cast = credits.cast
-      ? credits.cast
-          .slice(0, 8)
-          .map(person => person.name)
-          .join(", ")
-      : "Unavailable";
+    const cast = credits.cast && credits.cast.length > 0
+        ? credits.cast
+        .slice(0, 8)
+        .map(person => {
+        return `<a href="actorDetails.html?id=${person.id}" class="details-link">${person.name}</a>`;
+      })
+        .join(", ")
+        : "Unavailable";
 
     const awards = FILM_AWARDS[movieId]
       ? FILM_AWARDS[movieId].join(", ")
