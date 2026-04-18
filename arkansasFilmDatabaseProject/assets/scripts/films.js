@@ -116,11 +116,11 @@ async function loadFilmDetails() {
 
     const awards = FILM_AWARDS[movieId]
       ? FILM_AWARDS[movieId].join(", ")
-      : "No award information available";
+      : "Not applicable";
 
     const ark_connect = ARKANSAS_CONNECTION [movieId]
       ? ARKANSAS_CONNECTION[movieId].join(", ")
-      : "No information available";
+      : "Not applicable";
 
     detailsContainer.innerHTML = `
       <h2>${movie.title || "Title not available"}</h2>

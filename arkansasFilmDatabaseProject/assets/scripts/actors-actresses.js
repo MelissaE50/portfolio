@@ -23,6 +23,34 @@ const ACTOR_AWARDS = {
   ]
 };
 
+/* Manually enter connection to Arkansas */
+const ARKANSAS_CONNECTION = {
+  2453: [
+    "Born in Arkansas"
+  ],
+ 879: [
+    "Born in Arkansas"
+  ],
+  14838: [
+    "Born in Arkansas"
+  ],
+  4778: [
+    "Born in Arkansas"
+  ],
+  41249: [
+    "Born in Arkansas"
+  ],
+  16484: [
+    "Born in Arkansas"
+  ],
+  27539: [
+    "Born in Arkansas"
+  ],
+  8210: [
+    "Born in Arkansas"
+  ]
+};
+
 document.addEventListener("DOMContentLoaded", loadActorDetails);
 
 async function loadActorDetails() {
@@ -66,7 +94,11 @@ async function loadActorDetails() {
 
     const awards = ACTOR_AWARDS[actorId]
       ? ACTOR_AWARDS[actorId].join(", ")
-      : "No award information available";
+      : "Not applicable";
+
+    const ark_connect = ARKANSAS_CONNECTION [actorId]
+      ? ARKANSAS_CONNECTION[actorId].join(", ")
+      : "Not applicable";
 
     const filmographyLinks = credits.cast && credits.cast.length > 0
       ? credits.cast
@@ -92,6 +124,7 @@ async function loadActorDetails() {
       <p><strong>Birthday:</strong> ${actor.birthday || "Unavailable"}</p>
       <p><strong>Date of Death:</strong> ${actor.deathday || "Not Applicable"}</p>
       <p><strong>Place of Birth:</strong> ${actor.place_of_birth || "Unavailable"}</p>
+      <p><strong>Arkansas Connection:</strong> ${ark_connect}
       <p><strong>Biography:</strong> ${actor.biography || "Unavailable"}</p>
       <p><strong>Awards:</strong> ${awards}</p>
 
