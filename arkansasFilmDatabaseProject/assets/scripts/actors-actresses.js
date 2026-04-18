@@ -151,9 +151,7 @@ function getGenderText(genderCode) {
       return "Female";
     case 2:
       return "Male";
-    case 3:
-      return "Non-binary";
     default:
-      return "Unavailable";
+      return "Unknown";
   }
 }

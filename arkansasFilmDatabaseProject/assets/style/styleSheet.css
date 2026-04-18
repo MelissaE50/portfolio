@@ -285,3 +285,8 @@ h3 {
   margin-bottom: 16px;
   line-height: 1.6;
 }
+
+.details-link {
+  color: lightgoldenrodyellow;
+  text-decoration: underline;
+}

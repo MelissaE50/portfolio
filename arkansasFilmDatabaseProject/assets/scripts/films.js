@@ -111,7 +111,7 @@ async function loadFilmDetails() {
         ? credits.cast
         .slice(0, 8)
         .map(person => {
-        return `<a href="actorDetails.html?id=${person.id}" class="details-link">${person.name}</a>`;
+        return `<a href="actors-actressesDetails.html?id=${person.id}" class="details-link">${person.name}</a>`;
       })
         .join(", ")
         : "Unavailable";
@@ -140,7 +140,7 @@ async function loadFilmDetails() {
         movie.budget ? "$" + movie.budget.toLocaleString() : "Unavailable"
       }</p>
       <p><strong>Director:</strong> ${directors || "Unavailable"}</p>
-      <p><strong>Main Cast:</strong> ${cast || "Unavailable"}</p>
+      <p><strong>Cast:</strong> ${cast || "Unavailable"}</p>
       <p><strong>Awards:</strong> ${awards}</p>
       <p><strong>Overview:</strong> ${movie.overview || "Unavailable"}</p>
     `;
