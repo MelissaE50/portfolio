@@ -2,7 +2,7 @@ const API_KEY = "2dd0ec4f3c6b8d011e91690d1cd8fa86";
 const BASE_URL = "https://api.themoviedb.org/3";
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500";
 
-/* Manually enter awards using film IDs */
+// Local reference data for awards info using TMDB IDs 
 const FILM_AWARDS = {
   103731: [
     "Critics Choice Award winner for Best Young Actor/Actress (Tye Sheridan)"
@@ -29,9 +29,9 @@ const FILM_AWARDS = {
     "Academy Award winner for Best Actor in a Leading Role (John Wayne)",
     "Golden Globe Award winner for Best Actor - Drama (John Wayne)"
   ]
-};
+}; 
 
-/* Manually enter connection to Arkansas */
+// Local reference data indicating film's connection to Arkansas 
 const ARKANSAS_CONNECTION = {
   103731: [
     "Filmed in Dumas, DeWitt, and Lake Village, Arkansas"
@@ -87,10 +87,11 @@ async function loadFilmDetails() {
     );
 
     if (!creditsResponse.ok) {
-      throw new Error("Could not fetch cast and crew details.");
+      throw new Error("Could not fetch cast details.");
     }
 
     const credits = await creditsResponse.json();
+
 
     const posterUrl = movie.poster_path
       ? `${IMAGE_BASE_URL}${movie.poster_path}`
@@ -100,6 +101,7 @@ async function loadFilmDetails() {
       ? movie.genres.map(genre => genre.name).join(", ")
       : "Unavailable";
 
+      // create clickable links for cast that redirects to actors-actressesDetails page
     const cast = credits.cast && credits.cast.length > 0
         ? credits.cast
         .slice(0, 8)
@@ -130,8 +132,7 @@ async function loadFilmDetails() {
       <p><strong>Genre:</strong> ${genres}</p>
       <p><strong>Original Language:</strong> ${movie.original_language || "Unavailable"}</p>
       <p><strong>Budget:</strong> ${
-        movie.budget ? "$" + movie.budget.toLocaleString() : "Unavailable"
-      }</p>
+        movie.budget ? "$" + movie.budget.toLocaleString() : "Unavailable"}</p>
       <p><strong>Cast:</strong> ${cast || "Unavailable"}</p>
       <p><strong>Awards:</strong> ${awards}</p>
       <p><strong>Overview:</strong> ${movie.overview || "Unavailable"}</p>

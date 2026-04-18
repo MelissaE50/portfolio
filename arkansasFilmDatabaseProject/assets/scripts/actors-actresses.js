@@ -101,8 +101,6 @@ async function loadActorDetails() {
       ? `${IMAGE_BASE_URL}${actor.profile_path}`
       : "assets/images/no-image.png";
 
-    const genderText = getGenderText(actor.gender);
-
     const awards = ACTOR_AWARDS[actorId]
       ? ACTOR_AWARDS[actorId].join(", ")
       : "Not applicable";
@@ -111,7 +109,8 @@ async function loadActorDetails() {
       ? ARKANSAS_CONNECTION[actorId].join(", ")
       : "Not applicable";
 
-    const filmographyLinks = credits.cast && credits.cast.length > 0
+    // create list of clickable links for fiilms that redirects to filmsDetails page
+      const filmographyLinks = credits.cast && credits.cast.length > 0
       ? credits.cast
           .slice()
           .sort((a, b) => b.popularity - a.popularity)
@@ -123,15 +122,14 @@ async function loadActorDetails() {
           .join("")
       : "<li>Unavailable</li>";
 
+      // 
     detailsContainer.innerHTML = `
       <h2>${actor.name || "Name not available"}</h2>
       <img
         src="${profileUrl}"
         alt="Photo of ${actor.name || "actor/actress"}"
-        class="details-poster"
-      >
+        class="details-poster">
       <p><strong>Name:</strong> ${actor.name || "Unavailable"}</p>
-      <p><strong>Gender:</strong> ${genderText}</p>
       <p><strong>Birthday:</strong> ${actor.birthday || "Unavailable"}</p>
       <p><strong>Date of Death:</strong> ${actor.deathday || "Not Applicable"}</p>
       <p><strong>Place of Birth:</strong> ${actor.place_of_birth || "Unavailable"}</p>
@@ -149,20 +147,7 @@ async function loadActorDetails() {
   } catch (error) {
     console.error("Error loading actor/actress details:", error);
     if (detailsContainer) {
-      detailsContainer.innerHTML = `
-        <p>Sorry, there was a problem loading the actor/actress details.</p>
-      `;
+      detailsContainer.innerHTML = `<p>Sorry, there was a problem loading the actor/actress details.</p>`;
     }
-  }
-}
-
-// Checks the gender number from TMDB and changes it into words
-function getGenderText(genderCode) {
-  if (genderCode == 1) {
-    return "Female";
-  } else if (genderCode == 2) {
-    return "Male";
-  } else {
-    return "Unknown";
   }
 }
