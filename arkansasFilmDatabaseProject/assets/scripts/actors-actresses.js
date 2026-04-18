@@ -1,8 +1,18 @@
+/* 
+actors-actresses.js
+
+Purpose: Loads actor or actress details from TMDB based on the ID passed in the URL. Displays personal information, Arkansas connection,
+awards and fimlography links via resuable actors-actressesDetails page.
+
+Data Sources: TMDB API for actor/actress details and movie info. Local objects for awards and Arkansas connection data.
+*/
+
+// The Movie Database configuration
 const API_KEY = "2dd0ec4f3c6b8d011e91690d1cd8fa86";
 const BASE_URL = "https://api.themoviedb.org/3";
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500";
 
-/* Manually enter award data using actor IDs */
+// Local reference data for awards info using TMDB IDs 
 const ACTOR_AWARDS = {
   2453: [
     "Academy Award winner for Best Supporting Actress (Melvin and Howard)",
@@ -23,7 +33,7 @@ const ACTOR_AWARDS = {
   ]
 };
 
-/* Manually enter connection to Arkansas */
+// Local reference data indicating actor/actress' connection to Arkansas 
 const ARKANSAS_CONNECTION = {
   2453: [
     "Born in Arkansas"
@@ -53,6 +63,7 @@ const ARKANSAS_CONNECTION = {
 
 document.addEventListener("DOMContentLoaded", loadActorDetails);
 
+// Read the actor/actress ID from the page URL
 async function loadActorDetails() {
   const params = new URLSearchParams(window.location.search);
   const actorId = params.get("id");
@@ -145,13 +156,13 @@ async function loadActorDetails() {
   }
 }
 
+// Checks the gender number from TMDB and changes it into words
 function getGenderText(genderCode) {
-  switch (genderCode) {
-    case 1:
-      return "Female";
-    case 2:
-      return "Male";
-    default:
-      return "Unknown";
+  if (genderCode == 1) {
+    return "Female";
+  } else if (genderCode == 2) {
+    return "Male";
+  } else {
+    return "Unknown";
   }
 }

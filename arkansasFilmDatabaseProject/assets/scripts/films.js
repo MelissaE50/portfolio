@@ -72,15 +72,15 @@ async function loadFilmDetails() {
   }
 
   try {
-    const movieResponse = await fetch(
+    const filmResponse = await fetch(
       `${BASE_URL}/movie/${movieId}?api_key=${API_KEY}`
     );
 
-    if (!movieResponse.ok) {
-      throw new Error("Could not fetch movie details.");
+    if (!filmResponse.ok) {
+      throw new Error("Could not fetch film details.");
     }
 
-    const movie = await movieResponse.json();
+    const movie = await filmResponse.json();
 
     const creditsResponse = await fetch(
       `${BASE_URL}/movie/${movieId}/credits?api_key=${API_KEY}`
@@ -98,13 +98,6 @@ async function loadFilmDetails() {
 
     const genres = movie.genres && movie.genres.length > 0
       ? movie.genres.map(genre => genre.name).join(", ")
-      : "Unavailable";
-
-    const directors = credits.crew
-      ? credits.crew
-          .filter(person => person.job === "Director")
-          .map(person => person.name)
-          .join(", ")
       : "Unavailable";
 
     const cast = credits.cast && credits.cast.length > 0
@@ -139,7 +132,6 @@ async function loadFilmDetails() {
       <p><strong>Budget:</strong> ${
         movie.budget ? "$" + movie.budget.toLocaleString() : "Unavailable"
       }</p>
-      <p><strong>Director:</strong> ${directors || "Unavailable"}</p>
       <p><strong>Cast:</strong> ${cast || "Unavailable"}</p>
       <p><strong>Awards:</strong> ${awards}</p>
       <p><strong>Overview:</strong> ${movie.overview || "Unavailable"}</p>
