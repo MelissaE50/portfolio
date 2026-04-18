@@ -11,7 +11,8 @@ const ACTOR_AWARDS = {
   879: [
     "Academy Award Winner for Best Writing, Screenplay Based on Material Previously Produced or Published (Sling Blade)",
     "Golden Globe winner for Best Performance by an Actor in a Television Series - Drama (Goliath)",
-    "Golden Globe winner for Best Performance by an Actor in a Miniseries or Motion Picture Made for Television (Fargo)"
+    "Golden Globe winner for Best Performance by an Actor in a Miniseries or Motion Picture Made for Television (Fargo)",
+    "Critics Choice Awared winner for Best Supporting Actor (Primary Colors)"
   ],
   14838: [
     "American Movie Award winner for Best Screenplay (The China Syndrome)"
