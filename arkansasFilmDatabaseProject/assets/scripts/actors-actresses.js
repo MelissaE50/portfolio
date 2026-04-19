@@ -63,7 +63,7 @@ const ARKANSAS_CONNECTION = {
 
 document.addEventListener("DOMContentLoaded", loadActorDetails);
 
-// Read the actor/actress ID from the page URL
+// Read the actor/actress ID from the page URL, if it exists, proceed, if not return error message
 async function loadActorDetails() {
   const params = new URLSearchParams(window.location.search);
   const actorId = params.get("id");
@@ -97,9 +97,10 @@ async function loadActorDetails() {
 
     const credits = await creditsResponse.json();
 
+    // If TMDB provides an actor/actress profile image path, builds the image URL. If not, use placeholder image. 
     const profileUrl = actor.profile_path
       ? `${IMAGE_BASE_URL}${actor.profile_path}`
-      : "No image available";
+      : "assets/images/no-image.png";
 
     const awards = ACTOR_AWARDS[actorId]
       ? ACTOR_AWARDS[actorId].join(", ")
@@ -109,7 +110,7 @@ async function loadActorDetails() {
       ? ARKANSAS_CONNECTION[actorId].join(", ")
       : "Not applicable";
 
-    // create list of clickable links for first 10 fiilms that redirects to filmsDetails page (.map loops through an array and creates a new array)
+    // create list of clickable links for first 10 fiilms (slice 0, 10) that redirects to filmsDetails page (.map loops through an array and creates a new array)
       const filmographyLinks = credits.cast && credits.cast.length > 0
       ? credits.cast
           .slice(0, 10)
