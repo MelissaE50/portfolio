@@ -131,13 +131,13 @@ async function loadFilmDetails() {
       <p><strong>Arkansas Connection:</strong> ${ark_connect}
       <p><strong>Genre:</strong> ${genres}</p>
       <p><strong>Original Language:</strong> ${movie.original_language || "Unavailable"}</p>
-      <p><strong>Budget:</strong> ${
-        movie.budget ? "$" + movie.budget.toLocaleString() : "Unavailable"}</p>
+      <p><strong>Budget:</strong> ${movie.budget}</p>
       <p><strong>Cast:</strong> ${cast || "Unavailable"}</p>
       <p><strong>Awards:</strong> ${awards}</p>
       <p><strong>Overview:</strong> ${movie.overview || "Unavailable"}</p>
     `;
-  } catch (error) {
+  } 
+  catch (error) {
     console.error("Error loading film details:", error);
     detailsContainer.innerHTML = `
       <p>Sorry, there was a problem loading the film details.</p>
