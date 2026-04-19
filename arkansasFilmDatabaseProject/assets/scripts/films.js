@@ -4,11 +4,10 @@ films.js
 Purpose: Loads film details from TMDB based on the ID passed in the URL. Displays film information, Arkansas connection,
 awards and actor/acress links via resuable filmsDetails page.
 
-Data Sources: TMDB API for actor/actress details and movie info. Local objects for awards and Arkansas connection data.
+Data Sources: TMDB API for actor/actress details and film info. Local objects for awards and Arkansas connection data.
 */
 
 // The Movie Database configuration
-
 const API_KEY = "2dd0ec4f3c6b8d011e91690d1cd8fa86";
 const BASE_URL = "https://api.themoviedb.org/3";
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500";
