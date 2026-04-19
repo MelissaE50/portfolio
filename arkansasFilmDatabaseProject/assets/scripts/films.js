@@ -1,3 +1,14 @@
+/* 
+films.js
+
+Purpose: Loads film details from TMDB based on the ID passed in the URL. Displays film information, Arkansas connection,
+awards and actor/acress links via resuable filmsDetails page.
+
+Data Sources: TMDB API for actor/actress details and movie info. Local objects for awards and Arkansas connection data.
+*/
+
+// The Movie Database configuration
+
 const API_KEY = "2dd0ec4f3c6b8d011e91690d1cd8fa86";
 const BASE_URL = "https://api.themoviedb.org/3";
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500";
@@ -61,6 +72,7 @@ const ARKANSAS_CONNECTION = {
 
 document.addEventListener("DOMContentLoaded", loadFilmDetails);
 
+// Read the film ID from the page URL
 async function loadFilmDetails() {
   const params = new URLSearchParams(window.location.search);
   const movieId = params.get("id");
@@ -97,18 +109,18 @@ async function loadFilmDetails() {
       ? `${IMAGE_BASE_URL}${movie.poster_path}`
       : "assets/images/no-image.png";
 
+    // If genres exist, list their names separated by a comma. If no genre exists, display "Unavailable".
     const genres = movie.genres && movie.genres.length > 0
       ? movie.genres.map(genre => genre.name).join(", ")
       : "Unavailable";
 
-      // create clickable links for cast that redirects to actors-actressesDetails page
+      // Check if cast exists, if so, create clickable links that redirects to actors-actressesDetails page for the first 10 cast members
     const cast = credits.cast && credits.cast.length > 0
         ? credits.cast
-        .slice(0, 8)
+        .slice(0, 10)
         .map(person => {
         return `<a href="actors-actressesDetails.html?id=${person.id}" class="details-link">${person.name}</a>`;
-      })
-        .join(", ")
+      }).join(", ")
         : "Unavailable";
 
     const awards = FILM_AWARDS[movieId]
@@ -119,6 +131,7 @@ async function loadFilmDetails() {
       ? ARKANSAS_CONNECTION[movieId].join(", ")
       : "Not applicable";
 
+    // Displays data pulled through API in details container
     detailsContainer.innerHTML = `
       <h2>${movie.title || "Title not available"}</h2>
       <img
@@ -129,9 +142,9 @@ async function loadFilmDetails() {
       <p><strong>Full Title:</strong> ${movie.title || "Unavailable"}</p>
       <p><strong>Release Date:</strong> ${movie.release_date || "Unavailable"}</p>
       <p><strong>Arkansas Connection:</strong> ${ark_connect}
-      <p><strong>Genre:</strong> ${genres}</p>
+      <p><strong>Genre:</strong> ${genres || "Unavailable"}</p>
       <p><strong>Original Language:</strong> ${movie.original_language || "Unavailable"}</p>
-      <p><strong>Budget:</strong> ${movie.budget}</p>
+      <p><strong>Budget:</strong> ${movie.budget || "Unavailable"}</p>
       <p><strong>Cast:</strong> ${cast || "Unavailable"}</p>
       <p><strong>Awards:</strong> ${awards}</p>
       <p><strong>Overview:</strong> ${movie.overview || "Unavailable"}</p>

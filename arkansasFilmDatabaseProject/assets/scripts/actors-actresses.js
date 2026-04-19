@@ -122,7 +122,7 @@ async function loadActorDetails() {
           .join("")
       : "<li>Unavailable</li>";
 
-      // 
+    // Displays data pulled through API in details container
     detailsContainer.innerHTML = `
       <h2>${actor.name || "Name not available"}</h2>
       <img
