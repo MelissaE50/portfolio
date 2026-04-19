@@ -99,7 +99,7 @@ async function loadActorDetails() {
 
     const profileUrl = actor.profile_path
       ? `${IMAGE_BASE_URL}${actor.profile_path}`
-      : "assets/images/no-image.png";
+      : "No image available";
 
     const awards = ACTOR_AWARDS[actorId]
       ? ACTOR_AWARDS[actorId].join(", ")
@@ -109,20 +109,17 @@ async function loadActorDetails() {
       ? ARKANSAS_CONNECTION[actorId].join(", ")
       : "Not applicable";
 
-    // create list of clickable links for fiilms that redirects to filmsDetails page
+    // create list of clickable links for first 10 fiilms that redirects to filmsDetails page (.map loops through an array and creates a new array)
       const filmographyLinks = credits.cast && credits.cast.length > 0
       ? credits.cast
-          .slice()
-          .sort((a, b) => b.popularity - a.popularity)
-          .slice(0, 12)
+          .slice(0, 10)
           .map(movie => {
             const year = movie.release_date ? ` (${movie.release_date.substring(0, 4)})` : "";
-            return `<li><a href="filmsDetails.html?id=${movie.id}" class="details-link">${movie.title}${year}</a></li>`;
-          })
-          .join("")
+            return `<li><a href="filmsDetails.html?id=${movie.id}" 
+                    class="details-link">${movie.title}${year}</a></li>`;}).join("")
       : "<li>Unavailable</li>";
 
-    // Displays data pulled through API in details container
+    // Displays actor/actress data pulled through API in details container
     detailsContainer.innerHTML = `
       <h2>${actor.name || "Name not available"}</h2>
       <img

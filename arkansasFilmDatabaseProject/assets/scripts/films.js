@@ -107,7 +107,7 @@ async function loadFilmDetails() {
 
     const posterUrl = movie.poster_path
       ? `${IMAGE_BASE_URL}${movie.poster_path}`
-      : "assets/images/no-image.png";
+      : "No image available";
 
     // If genres exist, list their names separated by a comma. If no genre exists, display "Unavailable".
     const genres = movie.genres && movie.genres.length > 0
@@ -131,7 +131,7 @@ async function loadFilmDetails() {
       ? ARKANSAS_CONNECTION[movieId].join(", ")
       : "Not applicable";
 
-    // Displays data pulled through API in details container
+    // Displays film data pulled through API in details container
     detailsContainer.innerHTML = `
       <h2>${movie.title || "Title not available"}</h2>
       <img
