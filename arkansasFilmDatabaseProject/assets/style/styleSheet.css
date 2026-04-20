@@ -17,11 +17,11 @@ img {
 
 /* Film gallery grid */
 .film-gallery {
-  width: min(1200px, 92%);
+  width: min(1200px, 90%);
   margin: 40px auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: 25px;
   padding: 0 10px 30px;
 }
 
@@ -33,8 +33,6 @@ img {
   background: rgba(0, 0, 0, 0.6);
   border-radius: 14px;
   padding: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Film poster images */
@@ -61,11 +59,11 @@ img {
 
 /* Actor/Actress gallery grid */
 .actor-gallery {
-  width: min(1200px, 92%);
+  width: min(1200px, 90%);
   margin: 40px auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: 25px;
   padding: 0 10px 30px;
 }
 
@@ -77,8 +75,6 @@ img {
   background: rgba(0, 0, 0, 0.6);
   border-radius: 14px;
   padding: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Actor/Actress images */
@@ -109,7 +105,6 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
   font-family: "Playfair Display", serif;
   font-size: 20px;
   line-height: 1.5em;
@@ -177,14 +172,7 @@ h3 {
   font-family: "Playfair Display", serif;
   cursor: pointer;
   border-radius: 8px;
-  transition: all 0.3s ease;
   text-decoration: none;
-}
-
-.nav-btn:hover {
-  background-color: lightgoldenrodyellow;
-  color: black;
-  transform: translateY(-2px);
 }
 
 /*style search button*/
@@ -210,15 +198,6 @@ h3 {
   outline: none;
 }
 
-.search-wrap input::placeholder {
-  color: rgba(255, 250, 205, 0.75);
-}
-
-.search-wrap input:focus {
-  border-color: lightgoldenrodyellow;
-  box-shadow: 0 0 0 4px rgba(255, 250, 205, 0.15);
-}
-
 .search-wrap button {
   background-color: rgba(0, 0, 0, 0.7);
   color: lightgoldenrodyellow;
@@ -229,13 +208,6 @@ h3 {
   font-family: "Playfair Display", serif;
   cursor: pointer;
   border-radius: 10px;
-  transition: all 0.3s ease;
-}
-
-.search-wrap button:hover {
-  background-color: lightgoldenrodyellow;
-  color: black;
-  transform: translateY(-2px);
 }
 
 /* style footer and keep at bottom */
