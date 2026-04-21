@@ -7,7 +7,6 @@ html {
     box-sizing: inherit;
   }
 
-  
 
  /* ------ Fluid Images ------- */
 img {
@@ -108,7 +107,6 @@ body {
   font-family: "Playfair Display", serif;
   font-size: 20px;
   line-height: 1.5em;
-
   min-height: 100vh;
   display: flex;
   flex-direction: column;
