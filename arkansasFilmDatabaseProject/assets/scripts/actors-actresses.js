@@ -63,7 +63,7 @@ const ARKANSAS_CONNECTION = {
 
 document.addEventListener("DOMContentLoaded", loadActorDetails);
 
-// Read the actor/actress ID from the page URL, if it exists, proceed, if not return error message
+// Read the actor/actress ID from the TMDB page URL, if it exists, proceed, if not return error message
 async function loadActorDetails() {
   const params = new URLSearchParams(window.location.search);
   const actorId = params.get("id");
@@ -142,7 +142,10 @@ async function loadActorDetails() {
         </ul>
       </div>
     `;
-  } catch (error) {
+  } 
+  
+  // Returns error message if no actor/actress are results found
+  catch (error) {
     console.error("Error loading actor/actress details:", error);
     if (detailsContainer) {
       detailsContainer.innerHTML = `<p>Sorry, there was a problem loading the actor/actress details.</p>`;

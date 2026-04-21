@@ -71,7 +71,7 @@ const ARKANSAS_CONNECTION = {
 
 document.addEventListener("DOMContentLoaded", loadFilmDetails);
 
-// Read the film ID from the page URL, if it exists proceed, if not return error message
+// Read the film ID from the TMDB page URL, if it exists proceed, if not return error message
 async function loadFilmDetails() {
   const params = new URLSearchParams(window.location.search);
   const movieId = params.get("id");
@@ -149,6 +149,8 @@ async function loadFilmDetails() {
       <p><strong>Overview:</strong> ${movie.overview || "Unavailable"}</p>
     `;
   } 
+
+  // Returns error message if no film are results found
   catch (error) {
     console.error("Error loading film details:", error);
     detailsContainer.innerHTML = `

@@ -1,7 +1,9 @@
 /* 
 arkFilmDBP.js
 
-Purpose: Search button on home page. Loads film, actor, or actress details from TMDB based on the query. It will search for a film first and if that faiils, it will search for an actor/actress. Displays information, Arkansas connection,
+Purpose: Search button on home page. Loads film, actor, or actress details from TMDB based on the query. 
+It will search for a film first and if that faiils,
+it will search for an actor/actress. Displays information, Arkansas connection,
 awards, and cast or fimlography links, respectively, via resuable fiilmsDetails and/ or actors-actressesDetails page. 
 
 Data Sources: TMDB API for actor/actress and film details and movie info. Local objects for awards and Arkansas connection data.
