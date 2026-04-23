@@ -10,7 +10,7 @@ Data Sources: TMDB API for actor/actress and film details and movie info. Local 
 */
 
 // The Movie Database configuration
-const API_KEY = "2dd0ec4f3c6b8d011e91690d1cd8fa86";
+const API_KEY = "d3efa8130a60c7f5630565ff4ea7d7f2";
 const BASE_URL = "https://api.themoviedb.org/3";
 
 // Search button on home page
