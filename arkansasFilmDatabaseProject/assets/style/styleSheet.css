@@ -136,6 +136,21 @@ h3 {
   margin: 10px 0 20px 0;
   font-size: 22px;
 }
+h4 { 
+  text-align: center;
+  color: lightgoldenrodyellow;
+  text-shadow: 2px 2px #000000;
+  margin: 10px 0 20px 0;
+  font-size: 18px;
+}
+h5 { 
+  text-align: center;
+  color: lightgoldenrodyellow;
+  text-shadow: 2px 2px #000000;
+  margin: 450px 0 20px;
+  font-size: 18px;
+}
+
 
 .topPanel {
   width: 100%;
