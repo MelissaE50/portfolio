@@ -12,7 +12,7 @@ const API_KEY = "d3efa8130a60c7f5630565ff4ea7d7f2";
 const BASE_URL = "https://api.themoviedb.org/3";
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500";
 
-// Local reference data for awards info using TMDB IDs 
+// Local reference data for awards info using TMDB IDs  
 const ACTOR_AWARDS = {
   2453: [
     "Academy Award winner for Best Supporting Actress (Melvin and Howard)",
